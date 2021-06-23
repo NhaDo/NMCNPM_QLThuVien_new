@@ -103,7 +103,13 @@ namespace QLThuVien
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string them = @"insert into Sach values (N'" + txtTenSach.Text + "','" + cboxMaTL.Text + "','" + datenamxb.Text + "',N'" + txtNhaXB.Text + "','" + datengaynhap.Text + "','" + txtTriGia.Text + "','" + txtSoLuong.Text + "')";
+            string them = @"insert into Sach values (N'" + txtTenSach.Text +
+                                                        "','" + cboxMaTL.Text +
+                                                        "','" + datenamxb.Text +
+                                                        "',N'" + txtNhaXB.Text +
+                                                        "','" + datengaynhap.Text +
+                                                        "','" + txtTriGia.Text +
+                                                        "','" + txtSoLuong.Text + "')";
             Conn.executeQuery(them);
             MessageBox.Show("Thêm sách thành công!!");
             Load_Data();

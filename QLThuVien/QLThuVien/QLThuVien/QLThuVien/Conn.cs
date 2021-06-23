@@ -57,6 +57,7 @@ namespace QLThuVien
             catch
             {
                 MessageBox.Show("Lỗi", "Không thể thực thi câu lệnh này!!");
+                Console.WriteLine(sql);
                 return;
             }
 

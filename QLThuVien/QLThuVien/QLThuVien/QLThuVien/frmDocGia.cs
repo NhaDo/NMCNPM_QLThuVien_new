@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace QLThuVien
 {
@@ -50,11 +51,12 @@ namespace QLThuVien
 
         private void btnMoi_Click(object sender, EventArgs e)
         {
+
             txtMaDG.Text = "";
             txtHoTen.Text = "";
-            dateNgaySinh.Text = "01/01/2021";
-            datelapthe.Text = "01/01/2021";
-            datehethan.Text = "01/01/2021";
+            dateNgaySinh.Text = DateTime.Now.ToString("dd/mm/yyyy");
+            datelapthe.Text = DateTime.Now.ToString("dd/mm/yyyy");
+            datehethan.Text = DateTime.Now.ToString("dd/mm/yyyy");
             txtLoaiDocGia.Text = "";
             txtDiaChi.Text = "";
             txtEmail.Text = "";
@@ -63,7 +65,7 @@ namespace QLThuVien
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string xoa = @"delete from tblDocGia where MaDG='" + txtMaDG.Text + "'";
+            string xoa = @"delete from DOCGIA where MaDocGia='" + txtMaDG.Text + "'";
             if (txtMaDG.Text == "")
                 MessageBox.Show("Mã độc giả không được trống!!");
             else
@@ -89,23 +91,53 @@ namespace QLThuVien
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtMaDG.Text == "")
-                MessageBox.Show("Mã độc giả không được trống!!");
+            if (txtLoaiDocGia.Text != "1" && txtLoaiDocGia.Text != "2" && txtLoaiDocGia.Text != "3")
+                MessageBox.Show("Loại độc giả " + txtLoaiDocGia.Text + " không tồn tại");
+            else if (IsAlphabets(txtHoTen.Text)==false)
+                MessageBox.Show("Tên độc giả " + txtHoTen.Text + " chứa kí tự không hợp lệ");
             else
             {
-                string them = @"insert into tblDocGia(MaDG,HoTen,GioiTinh,NgaySinh,DiaChi,SDT,Email) values('" + txtMaDG.Text + "',N'" + txtHoTen.Text + "','" + dateNgaySinh.Text + "',N'" + txtDiaChi.Text + "','" + txtEmail.Text + "')";
+                string them = @"insert into DOCGIA(TenDocGia,MaLoaiDocGia,NgaySinh,DiaChi,Email,NgayLapThe,NgayHetHan,TongNo) values('"
+                                                    
+                                             + txtHoTen.Text + 
+                                            "','" + txtLoaiDocGia.Text +
+                                            "','" + dateNgaySinh.Text + 
+                                            "',N'" + txtDiaChi.Text + 
+                                            "','" + txtEmail.Text +
+                                            "','" + datelapthe.Text + 
+                                            "','" + datehethan.Text + 
+                                            "','" + txtTongNo.Text + "')";
                 Conn.executeQuery(them);
                 Load_Data();
             }
         }
 
+        public bool IsAlphabets(string inputString)
+        {
+            Regex r = new Regex("^[a-zA-Z ]+$");
+            if (r.IsMatch(inputString))
+                return true;
+            else
+                return false;
+        }
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            if (txtMaDG.Text == "")
-                MessageBox.Show("Mã độc giả không được trống!!");
+            //if (txtMaDG.Text == "")
+            //MessageBox.Show("Mã độc giả không được trống!!");
+
+            if (txtLoaiDocGia.Text != "1" && txtLoaiDocGia.Text != "2" && txtLoaiDocGia.Text != "3")
+                MessageBox.Show("Loại độc giả " + txtLoaiDocGia.Text + " không tồn tại");
+            else if (IsAlphabets(txtHoTen.Text)==false)
+                MessageBox.Show("Tên độc giả " + txtHoTen.Text + " chứa kí tự không hợp lệ");
             else
             {
-                string capnhat = @"update tblDocGia set MaDG='" + txtMaDG.Text + "',HoTen=N'" + txtHoTen.Text + "',NgaySinh='" + dateNgaySinh.Text + "',DiaChi=N'" + txtDiaChi.Text + "',SDT='" + txtEmail.Text + "' where MaDG='" + txtMaDG.Text + "'";
+                string capnhat = @"update DOCGIA set 
+                                TenDocGia=N'" + txtHoTen.Text + 
+                                "',MaLoaiDocGia='" + txtLoaiDocGia.Text +
+                                "',NgaySinh='" + dateNgaySinh.Text +
+                                "',DiaChi=N'" + txtDiaChi.Text +
+                                "',Email='" + txtEmail.Text + 
+                                "' WHERE MaDocGia='" + txtMaDG.Text + "'";
                 Conn.executeQuery(capnhat);
                 Load_Data();
             }

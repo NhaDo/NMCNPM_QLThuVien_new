@@ -18,20 +18,20 @@ namespace QLThuVien
         }
         public void Load_TL()
         {
-            string str = @"select MaTL,TenTL from tblTheLoai";
+            string str = @"select MaTheLoai,TenTheLoai from THELOAI";
             DataTable dt = Conn.getDataTable(str);
             dataTL.DataSource = dt;
         }
         public void Load_Sach()
         {
-            string str = @"select TenSach,TacGia,NhaXuatBan from tblSach";
+            string str = @"select TenSach,TacGia,NhaXuatBan from SACH";
             DataTable dt = Conn.getDataTable(str);
             dataSach.DataSource = dt;
         }
         public void Load_cbox()
         {
-            string sqlcboxSup = "select * from tblDocGia";
-            cboxMaDG.DisplayMember = "MaDG";
+            string sqlcboxSup = "select * from DOCGIA";
+            cboxMaDG.DisplayMember = "MaDocGia";
             cboxMaDG.DataSource = Conn.getDataTable(sqlcboxSup);
         }
         private void frmMuonSach_Load(object sender, EventArgs e)
