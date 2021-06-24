@@ -28,72 +28,128 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataHienThi = new System.Windows.Forms.DataGridView();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.btnTruyVab = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataHienThi)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dateNgayTra = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dataTraCuu = new System.Windows.Forms.DataGridView();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTraCuu)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataHienThi
+            // panel1
             // 
-            this.dataHienThi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataHienThi.Location = new System.Drawing.Point(12, 383);
-            this.dataHienThi.Name = "dataHienThi";
-            this.dataHienThi.RowTemplate.Height = 24;
-            this.dataHienThi.Size = new System.Drawing.Size(630, 338);
-            this.dataHienThi.TabIndex = 1;
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Controls.Add(this.dateNgayTra);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.panel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.ForeColor = System.Drawing.Color.Black;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(612, 94);
+            this.panel1.TabIndex = 5;
+            this.panel1.UseWaitCursor = true;
             // 
-            // listBox1
+            // dateNgayTra
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 25;
-            this.listBox1.Items.AddRange(new object[] {
-            "Báo cáo tên 10 đầu sách được mượn nhiều nhất.",
-            "Danh mục sách không được mượn lần nào.",
-            "Danh mục sách đang được mượn.",
-            "Danh mục sách đã quá hạn trả.",
-            "Danh sách sinh viên bị phạt vì trả quá hạn."});
-            this.listBox1.Location = new System.Drawing.Point(13, 64);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(629, 229);
-            this.listBox1.TabIndex = 2;
+            this.dateNgayTra.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.dateNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateNgayTra.Location = new System.Drawing.Point(169, 25);
+            this.dateNgayTra.Name = "dateNgayTra";
+            this.dateNgayTra.Size = new System.Drawing.Size(295, 30);
+            this.dateNgayTra.TabIndex = 3;
+            this.dateNgayTra.UseWaitCursor = true;
+            this.dateNgayTra.ValueChanged += new System.EventHandler(this.dateNgayTra_ValueChanged);
             // 
-            // btnTruyVab
+            // label4
             // 
-            this.btnTruyVab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTruyVab.Location = new System.Drawing.Point(12, 299);
-            this.btnTruyVab.Name = "btnTruyVab";
-            this.btnTruyVab.Size = new System.Drawing.Size(125, 78);
-            this.btnTruyVab.TabIndex = 3;
-            this.btnTruyVab.Text = "Truy Vấn";
-            this.btnTruyVab.UseVisualStyleBackColor = true;
-            this.btnTruyVab.Click += new System.EventHandler(this.btnTruyVab_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(29, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(134, 23);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Ngày muốn tra";
+            this.label4.UseWaitCursor = true;
             // 
-            // textBox3
+            // dataTraCuu
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(13, 17);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(629, 41);
-            this.textBox3.TabIndex = 4;
-            this.textBox3.Text = "TRUY VẤN NHANH";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.dataTraCuu.BackgroundColor = System.Drawing.Color.White;
+            this.dataTraCuu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataTraCuu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column2,
+            this.Column1,
+            this.Column3,
+            this.Column4});
+            this.dataTraCuu.Location = new System.Drawing.Point(3, 94);
+            this.dataTraCuu.Name = "dataTraCuu";
+            this.dataTraCuu.ReadOnly = true;
+            this.dataTraCuu.RowHeadersWidth = 51;
+            this.dataTraCuu.RowTemplate.Height = 24;
+            this.dataTraCuu.Size = new System.Drawing.Size(612, 415);
+            this.dataTraCuu.TabIndex = 6;
+            this.dataTraCuu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTheLoai_CellContentClick);
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "MaMuonTra";
+            this.Column2.HeaderText = "STT";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 50;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaCuonSach";
+            this.Column1.HeaderText = "Mã Sách";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "NgayMuon";
+            this.Column3.HeaderText = "Ngày Mượn";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 200;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "SoNgayTraTre";
+            this.Column4.HeaderText = "Số Ngày Trả Trễ";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 200;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(484, 22);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(106, 41);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "Xuất file";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(654, 733);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.btnTruyVab);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.dataHienThi);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(616, 733);
+            this.Controls.Add(this.dataTraCuu);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
@@ -102,16 +158,23 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thống Kê";
             this.Load += new System.EventHandler(this.frmThongKe_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataHienThi)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTraCuu)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataHienThi;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button btnTruyVab;
-        private System.Windows.Forms.TextBox textBox3;
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DateTimePicker dateNgayTra;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dataTraCuu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Button btnSave;
     }
 }

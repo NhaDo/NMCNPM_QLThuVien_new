@@ -68,7 +68,7 @@ namespace QLThuVien
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string xoa = @"delete from Sach where MaSach='" + txtMaSach.Text + "'";
+            string xoa = @"delete from CTTACGIA where MaSach='" + txtMaSach.Text + "';delete from CuonSach where MaSach='" + txtMaSach.Text + "';delete from Sach where MaSach='" + txtMaSach.Text + "'"; ;
             if (txtMaSach.Text == "")
                 MessageBox.Show("Mã sách không được trống!!");
             else

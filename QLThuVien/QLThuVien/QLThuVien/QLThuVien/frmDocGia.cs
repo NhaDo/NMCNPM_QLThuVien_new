@@ -110,5 +110,10 @@ namespace QLThuVien
                 Load_Data();
             }
         }
+
+        private void dataDocGia_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

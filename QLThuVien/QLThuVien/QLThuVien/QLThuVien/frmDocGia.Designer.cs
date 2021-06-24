@@ -82,20 +82,22 @@
             // 
             // dateNgaySinh
             // 
-            this.dateNgaySinh.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.dateNgaySinh.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.dateNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateNgaySinh.Location = new System.Drawing.Point(693, 37);
             this.dateNgaySinh.Name = "dateNgaySinh";
             this.dateNgaySinh.Size = new System.Drawing.Size(295, 30);
             this.dateNgaySinh.TabIndex = 3;
+            this.dateNgaySinh.UseWaitCursor = true;
             // 
             // txtEmail
             // 
-            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.txtEmail.Location = new System.Drawing.Point(693, 135);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(295, 30);
             this.txtEmail.TabIndex = 1;
+            this.txtEmail.UseWaitCursor = true;
             // 
             // label6
             // 
@@ -109,11 +111,12 @@
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDiaChi.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.txtDiaChi.Location = new System.Drawing.Point(693, 86);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(295, 30);
             this.txtDiaChi.TabIndex = 1;
+            this.txtDiaChi.UseWaitCursor = true;
             // 
             // label5
             // 
@@ -127,11 +130,12 @@
             // 
             // txtHoTen
             // 
-            this.txtHoTen.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtHoTen.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.txtHoTen.Location = new System.Drawing.Point(183, 88);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(295, 30);
             this.txtHoTen.TabIndex = 1;
+            this.txtHoTen.UseWaitCursor = true;
             // 
             // label2
             // 
@@ -174,6 +178,7 @@
             this.dataDocGia.RowTemplate.Height = 24;
             this.dataDocGia.Size = new System.Drawing.Size(1026, 272);
             this.dataDocGia.TabIndex = 4;
+            this.dataDocGia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataDocGia_CellContentClick);
             this.dataDocGia.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataDocGia_CellMouseClick);
             // 
             // Column1
@@ -259,11 +264,12 @@
             // 
             // txtMaDG
             // 
-            this.txtMaDG.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaDG.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.txtMaDG.Location = new System.Drawing.Point(183, 39);
             this.txtMaDG.Name = "txtMaDG";
             this.txtMaDG.Size = new System.Drawing.Size(295, 30);
             this.txtMaDG.TabIndex = 1;
+            this.txtMaDG.UseWaitCursor = true;
             // 
             // label1
             // 
@@ -370,11 +376,12 @@
             // 
             // txtLoaiDocGia
             // 
-            this.txtLoaiDocGia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtLoaiDocGia.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.txtLoaiDocGia.Location = new System.Drawing.Point(693, 191);
             this.txtLoaiDocGia.Name = "txtLoaiDocGia";
             this.txtLoaiDocGia.Size = new System.Drawing.Size(295, 30);
             this.txtLoaiDocGia.TabIndex = 10;
+            this.txtLoaiDocGia.UseWaitCursor = true;
             // 
             // label11
             // 
@@ -388,11 +395,12 @@
             // 
             // txtTongNo
             // 
-            this.txtTongNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTongNo.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.txtTongNo.Location = new System.Drawing.Point(409, 233);
             this.txtTongNo.Name = "txtTongNo";
             this.txtTongNo.Size = new System.Drawing.Size(295, 30);
             this.txtTongNo.TabIndex = 8;
+            this.txtTongNo.UseWaitCursor = true;
             // 
             // label9
             // 
@@ -416,21 +424,23 @@
             // 
             // datehethan
             // 
-            this.datehethan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.datehethan.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.datehethan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datehethan.Location = new System.Drawing.Point(183, 186);
             this.datehethan.Name = "datehethan";
             this.datehethan.Size = new System.Drawing.Size(295, 30);
             this.datehethan.TabIndex = 5;
+            this.datehethan.UseWaitCursor = true;
             // 
             // datelapthe
             // 
-            this.datelapthe.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.datelapthe.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.datelapthe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datelapthe.Location = new System.Drawing.Point(183, 137);
             this.datelapthe.Name = "datelapthe";
             this.datelapthe.Size = new System.Drawing.Size(295, 30);
             this.datelapthe.TabIndex = 4;
+            this.datelapthe.UseWaitCursor = true;
             // 
             // label7
             // 

@@ -153,10 +153,10 @@ insert into LOAIDOCGIA values(N'Học sinh')
 insert into LOAIDOCGIA values(N'Sinh viên')
 insert into LOAIDOCGIA values(N'Tự do')
 
-insert into DOCGIA values(N'Phạm Huỳnh Phúc', 2, '01/01/2000',N'Nam Định', 'email1@gmail.com', '01/01/2021', '01/07/2021', 0)
-insert into DOCGIA values(N'Lê Tài', 1, '01/02/2000', N'Quảng Bình', 'email2@gmail.com', '01/02/2021', '01/08/2021', 0)
-insert into DOCGIA values(N'Đỗ Thị Thanh Nhã', 2, '01/03/2000', N'Quảng Nam', 'email3@gmail.com', '01/03/2021','01/09/2021', 0)
-insert into DOCGIA values(N'Nguyễn Thị Thanh Tuyền', 3, '01/04/1989', N'Bình Dương', 'email14@gmail.com', '01/04/2021', '01/10/2021', 0)
+insert into DOCGIA values(N'Phạm Huỳnh Phúc', 2, '01/01/2000',N'Nam Định', 'email1@gmail.com', '01/01/2021', '07/01/2021', 0)
+insert into DOCGIA values(N'Lê Tài', 1, '02/01/2000', N'Quảng Bình', 'email2@gmail.com', '02/01/2021', '08/01/2021', 0)
+insert into DOCGIA values(N'Đỗ Thị Thanh Nhã', 2, '03/01/2000', N'Quảng Nam', 'email3@gmail.com', '03/01/2021','09/01/2021', 0)
+insert into DOCGIA values(N'Nguyễn Thị Thanh Tuyền', 3, '04/01/1989', N'Bình Dương', 'email14@gmail.com', '04/01/2021', '10/01/2021', 0)
 
 
 insert into TACGIA values(N'Tác giả 1')

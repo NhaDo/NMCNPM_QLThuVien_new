@@ -56,7 +56,7 @@ namespace QLThuVien
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            Form TL = new frmTheLoai();
+            Form TL = new frmQuyDinh();
             TL.ShowDialog();
         }
 
@@ -75,7 +75,7 @@ namespace QLThuVien
 
         private void pictureBox12_Click(object sender, EventArgs e)
         {
-            Form Tra = new frmTraSach();
+            Form Tra = new frmPhieuThu();
             Tra.ShowDialog();
         }
 
@@ -99,7 +99,7 @@ namespace QLThuVien
 
         private void trảSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form Tra = new frmTraSach();
+            Form Tra = new frmPhieuThu();
             Tra.ShowDialog();
         }
 
@@ -193,6 +193,17 @@ namespace QLThuVien
             TK.ShowDialog();
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form TK = new frmThongKe();
+            TK.ShowDialog();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Form BC = new frmBaoCao();
+            BC.ShowDialog();
+        }
 
         private void pictureBox13_Click(object sender, EventArgs e)
         {

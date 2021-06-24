@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,54 +13,66 @@ namespace QLThuVien
 {
     public partial class frmThongKe : Form
     {
+
         public frmThongKe()
         {
             InitializeComponent();
         }
-
-        private void btnTruyVab_Click(object sender, EventArgs e)
+        public void Load_ThongKe(string ngay)
         {
-            string currTime = DateTime.Now.Date.ToShortDateString();
-            if (Convert.ToString(listBox1.SelectedItem)== "Báo cáo tên 10 đầu sách được mượn nhiều nhất.")
+            string str = @"select MaMuonTra,MaCuonSach,NgayMuon from PhieuMuonTra";
+            DataTable dt = Conn.getDataTable(str);
+            dt.Columns.Add("SoNgayTraTre", typeof(string));
+            dataTraCuu.DataSource = dt;
+            for (int i = 0; i < (dataTraCuu.Rows.Count - 1); i = i + 1)
             {
-                string str = @"SELECT TOP(10) MaSach,TenSach,TacGia,NhaXuatBan,SoLanMuon FROM tblSach ORDER BY SoLanMuon DESC;";
-                DataTable dt = Conn.getDataTable(str);
-                dataHienThi.DataSource = dt;
+                DateTime dates1 = Convert.ToDateTime(dataTraCuu.Rows[i].Cells[2].Value);
+                DateTime dates2 = Convert.ToDateTime(ngay);
+
+                TimeSpan time = dates1.Subtract(dates2);
+                int days = -(time.Days + 5);
+                dataTraCuu.Rows[i].Cells[3].Value = days.ToString();
             }
-            //
-            if (Convert.ToString(listBox1.SelectedItem) == "Danh mục sách không được mượn lần nào.")
-            {
-                string str = @"SELECT MaSach,TenSach,TacGia,NhaXuatBan,SoLanMuon FROM tblSach where SoLanMuon=0";
-                DataTable dt = Conn.getDataTable(str);
-                dataHienThi.DataSource = dt;
-            }
-            //
-            if (Convert.ToString(listBox1.SelectedItem) == "Danh mục sách đang được mượn.")
-            {
-                string str = @"select MaSach,TenSach,TacGia,NhaXuatBan from tblSach where MaSach=(select MaSach from tblChiTietMuon where tblChiTietMuon.MaSach=tblSach.MaSach)";
-                DataTable dt = Conn.getDataTable(str);
-                dataHienThi.DataSource = dt;
-                //MessageBox.Show(DateTime.Now.Date.ToShortDateString());
-            }
-            //
-            if (Convert.ToString(listBox1.SelectedItem) == "Danh mục sách đã quá hạn trả.")
-            {
-                string str = @"SELECT MaSach,TenSach,TacGia,NhaXuatBan from tblSach where MaSach=(select MaSach from tblChiTietMuon where NgayTra <'"+currTime+"')";
-                DataTable dt = Conn.getDataTable(str);
-                dataHienThi.DataSource = dt;
-            }
-            if (Convert.ToString(listBox1.SelectedItem) == "Danh sách sinh viên bị phạt vì trả quá hạn.")
-            {
-                string str = @"select * from tblDocGia where MaDG=(select MaDG from tblHoaDonMuon,tblChiTietMuon where tblHoaDonMuon.MaPM=tblChiTietMuon.MaPM and tblChiTietMuon.NgayTra<'" + currTime + "')";
-                DataTable dt = Conn.getDataTable(str);
-                dataHienThi.DataSource = dt;
-            }
+
 
         }
-
         private void frmThongKe_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            Load_ThongKe(dateNgayTra.Text);
+        }
+
+        private void dataTheLoai_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+                
+        }
+
+        private void dateNgayTra_ValueChanged(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            Load_ThongKe(dateNgayTra.Text);
+        }
+
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application xcelApp = new Microsoft.Office.Interop.Excel.Application();
+            xcelApp.Application.Workbooks.Add(Type.Missing);
+
+            for (int i = 1; i < dataTraCuu.Columns.Count + 1; i++)
+            {
+                xcelApp.Cells[1, i] = dataTraCuu.Columns[i - 1].HeaderText;
+            }
+
+            for (int i = 0; i < dataTraCuu.Rows.Count-1; i++)
+            {
+                for (int j = 0; j < dataTraCuu.Columns.Count; j++)
+                {
+                    xcelApp.Cells[i + 2, j + 1] = dataTraCuu.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+            xcelApp.Columns.AutoFit();
+            xcelApp.Visible = true;
         }
     }
 }
