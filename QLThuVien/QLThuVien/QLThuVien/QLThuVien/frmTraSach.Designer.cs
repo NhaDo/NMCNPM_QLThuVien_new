@@ -39,8 +39,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataSach = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTimSach = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -51,6 +49,9 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.MaCuonSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSach)).BeginInit();
@@ -89,7 +90,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(6, 74);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 25);
+            this.label7.Size = new System.Drawing.Size(94, 29);
             this.label7.TabIndex = 0;
             this.label7.Text = "Mã PM:";
             // 
@@ -98,7 +99,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(6, 123);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 25);
+            this.label5.Size = new System.Drawing.Size(141, 29);
             this.label5.TabIndex = 0;
             this.label5.Text = "Ngày Mượn:";
             // 
@@ -108,7 +109,7 @@
             this.cboxNgayMuon.FormattingEnabled = true;
             this.cboxNgayMuon.Location = new System.Drawing.Point(131, 115);
             this.cboxNgayMuon.Name = "cboxNgayMuon";
-            this.cboxNgayMuon.Size = new System.Drawing.Size(250, 33);
+            this.cboxNgayMuon.Size = new System.Drawing.Size(250, 37);
             this.cboxNgayMuon.TabIndex = 1;
             // 
             // cboxMaPM
@@ -117,7 +118,7 @@
             this.cboxMaPM.FormattingEnabled = true;
             this.cboxMaPM.Location = new System.Drawing.Point(131, 66);
             this.cboxMaPM.Name = "cboxMaPM";
-            this.cboxMaPM.Size = new System.Drawing.Size(250, 33);
+            this.cboxMaPM.Size = new System.Drawing.Size(250, 37);
             this.cboxMaPM.TabIndex = 1;
             this.cboxMaPM.SelectedIndexChanged += new System.EventHandler(this.cboxMaPM_SelectedIndexChanged);
             // 
@@ -127,7 +128,7 @@
             this.cboxMaDG.FormattingEnabled = true;
             this.cboxMaDG.Location = new System.Drawing.Point(131, 13);
             this.cboxMaDG.Name = "cboxMaDG";
-            this.cboxMaDG.Size = new System.Drawing.Size(250, 33);
+            this.cboxMaDG.Size = new System.Drawing.Size(250, 37);
             this.cboxMaDG.TabIndex = 1;
             this.cboxMaDG.SelectedIndexChanged += new System.EventHandler(this.cboxMaDG_SelectedIndexChanged);
             // 
@@ -136,7 +137,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 25);
+            this.label3.Size = new System.Drawing.Size(93, 29);
             this.label3.TabIndex = 0;
             this.label3.Text = "Mã ĐG:";
             // 
@@ -170,37 +171,23 @@
             // 
             this.dataSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaCuonSach,
             this.Column1,
             this.Column2});
             this.dataSach.Location = new System.Drawing.Point(6, 57);
             this.dataSach.Name = "dataSach";
             this.dataSach.ReadOnly = true;
+            this.dataSach.RowHeadersWidth = 62;
             this.dataSach.RowTemplate.Height = 24;
             this.dataSach.Size = new System.Drawing.Size(382, 334);
             this.dataSach.TabIndex = 2;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaSach";
-            this.Column1.HeaderText = "Mã Sách";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 110;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TenSach";
-            this.Column2.HeaderText = "Tên Sách";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 229;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(5, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 25);
+            this.label1.Size = new System.Drawing.Size(61, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tìm:";
             // 
@@ -208,7 +195,7 @@
             // 
             this.txtTimSach.Location = new System.Drawing.Point(56, 21);
             this.txtTimSach.Name = "txtTimSach";
-            this.txtTimSach.Size = new System.Drawing.Size(325, 30);
+            this.txtTimSach.Size = new System.Drawing.Size(325, 35);
             this.txtTimSach.TabIndex = 5;
             // 
             // textBox2
@@ -268,10 +255,10 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 25;
+            this.listBox1.ItemHeight = 29;
             this.listBox1.Location = new System.Drawing.Point(6, 12);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(579, 529);
+            this.listBox1.Size = new System.Drawing.Size(579, 526);
             this.listBox1.TabIndex = 0;
             // 
             // textBox4
@@ -300,9 +287,35 @@
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             // 
+            // MaCuonSach
+            // 
+            this.MaCuonSach.HeaderText = "Mã Cuốn Sách";
+            this.MaCuonSach.MinimumWidth = 8;
+            this.MaCuonSach.Name = "MaCuonSach";
+            this.MaCuonSach.ReadOnly = true;
+            this.MaCuonSach.Width = 150;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaSach";
+            this.Column1.HeaderText = "Mã Sách";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 110;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TenSach";
+            this.Column2.HeaderText = "Tên Sách";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 229;
+            // 
             // frmTraSach
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1057, 757);
@@ -355,8 +368,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnHienThi;
         private System.Windows.Forms.ComboBox cboxNgayMuon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaCuonSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

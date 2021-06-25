@@ -19,7 +19,7 @@ namespace QLThuVien
         }
         public void Load_Data()
         {
-            string str = @"select * from DocGia";
+            string str = @"select * from DOCGIA";
             DataTable dt = Conn.getDataTable(str);
             dataDocGia.DataSource = dt;
         }
