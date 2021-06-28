@@ -253,6 +253,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Library_DB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\SACH.jpg" />
     <Content Include="ThamSo.h" />
     <None Include="Resources\Ausleihe-formatkey-jpg-w320m.jpg" />
     <None Include="Resources\Anh-dep-sach-tacgiavn.jpg" />

@@ -373,7 +373,6 @@
             this.panel1.Size = new System.Drawing.Size(1027, 277);
             this.panel1.TabIndex = 3;
             this.panel1.UseWaitCursor = true;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txtLoaiDocGia
             // 
