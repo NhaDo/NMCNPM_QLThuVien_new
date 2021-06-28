@@ -12,6 +12,13 @@ namespace QLThuVien
 {
     public partial class frmPhieuMuonTra : Form
     {
+        public int SoNgayMuonMax { get; set; }
+
+        public int SoSachMuonMax { get; set; }
+
+        public int TienPhatMotNgay { get; set; }
+
+
         public frmPhieuMuonTra()
         {
             InitializeComponent();
@@ -48,13 +55,40 @@ namespace QLThuVien
 
         private void btnThem_Click_1(object sender, EventArgs e)
         {
-            if (@"Select MaCuonSach from PhieuMuonTra" == txtMaCuonSach.Text)
+            int flag = 0;
+            if (dataPhieuMuonTra.Rows.Count > 1)
             {
-                MessageBox.Show("Cuốn sách này đã được mượn!");
+                foreach (DataGridViewRow row in dataPhieuMuonTra.Rows)
+                {
+                    if (row.Index<=(dataPhieuMuonTra.RowCount-2) && row.Cells[2].Value.ToString() == txtMaCuonSach.Text.ToString())
+                    {
+                        MessageBox.Show("Cuốn sách này đã được mượn!");
+                        flag = 1;
+                        break;
+                    }
+                }
             }
-            else
+
+            int flag2 = 0;
+            if (dataPhieuMuonTra.Rows.Count >1)
             {
-                string them = @"insert into PHIEUMUONTRA(MaCuonSach,MaDocGia,NgayMuon,NgayTra,TienPhat,SoTienTra) values ('" 
+                foreach (DataGridViewRow row in dataPhieuMuonTra.Rows)
+                {
+                    if (row.Index <= (dataPhieuMuonTra.RowCount - 2) && row.Cells[3].Value.ToString() == txtMaDocGia.Text.ToString())
+                    {
+                        flag2++;
+                        if (flag2 == 5)
+                            break;
+                    }
+                }
+            }
+
+            if (flag2 == SoSachMuonMax)
+                MessageBox.Show("Độc giả đã mượn đủ " + SoSachMuonMax.ToString() + " cuốn sách");
+
+            if (flag == 0 && flag2<SoSachMuonMax)
+            {
+                string them = @"insert into PHIEUMUONTRA(MaCuonSach,MaDocGia,NgayMuon,NgayTra,TienPhat,SoTienTra) values ('"
                                                                     + txtMaCuonSach.Text + "','"
                                                                     + txtMaDocGia.Text + "','"
                                                                     + datengaymuon.Text + "','"
@@ -62,12 +96,15 @@ namespace QLThuVien
                                                                     + txtTienPhat.Text + "','"
                                                                     + txtSoTienTra.Text + "')";
                 Conn.executeQuery(them);
-                string here = @"update CuonSach set TinhTrang=N'Đang mượn' where MaCuonSach='" +txtMaCuonSach.Text +"')";
+                string here = @"update CuonSach set TinhTrang=N'Đang mượn' where MaCuonSach='" + txtMaCuonSach.Text + "')";
                 Conn.executeQuery(here);
                 MessageBox.Show("Thêm phiếu thành công!");
-                Load_Data();
 
+                Load_Data();
             }
+
+                
+            
         }
 
         private void btnXoa_Click_1(object sender, EventArgs e)
@@ -140,13 +177,13 @@ namespace QLThuVien
             {
                 DataGridViewRow row = new DataGridViewRow();
                 row = dataPhieuMuonTra.Rows[e.RowIndex];
-                txtMaMuonTra.Text = row.Cells[0].Value.ToString();
-                txtMaCuonSach.Text = row.Cells[1].Value.ToString();
-                txtMaDocGia.Text = row.Cells[2].Value.ToString();
-                datengaymuon.Text = row.Cells[3].Value.ToString();
-                datengaytra.Text = row.Cells[4].Value.ToString();
-                txtSoTienTra.Text = row.Cells[5].Value.ToString();
-                txtTienPhat.Text = row.Cells[6].Value.ToString();
+                txtMaMuonTra.Text = row.Cells[1].Value.ToString();
+                txtMaCuonSach.Text = row.Cells[2].Value.ToString();
+                txtMaDocGia.Text = row.Cells[3].Value.ToString();
+                datengaymuon.Text = row.Cells[4].Value.ToString();
+                datengaytra.Text = row.Cells[5].Value.ToString();
+                txtSoTienTra.Text = row.Cells[6].Value.ToString();
+                txtTienPhat.Text = row.Cells[7].Value.ToString();
             }
             catch (Exception)
             { }
