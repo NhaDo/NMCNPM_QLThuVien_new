@@ -12,6 +12,7 @@ namespace QLThuVien
 {
     public partial class frmDanhMucSach : Form
     {
+        public int KhoangCachXB { get; set; }
         public frmDanhMucSach()
         {
             InitializeComponent();
@@ -95,18 +96,29 @@ namespace QLThuVien
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            string capnhat = @"update Sach set TenSach=N'" + txtTenSach.Text + "',MaTheLoai='" + cboxMaTL.Text + "',NamXuatBan='" + datenamxb.Text + "',NhaXuatBan=N'" + txtNhaXB.Text + "',NgayNhap='" + datengaynhap.Text + "',TriGia='"+txtTriGia.Text+"',SoLuong='"+txtSoLuong.Text+"' where MaSach='" + txtMaSach.Text + "'";
-            Conn.executeQuery(capnhat);
-            MessageBox.Show("Cập nhật thành công!!");
-            Load_Data();
+            if (datengaynhap.Value.Subtract(datenamxb.Value).TotalDays <= KhoangCachXB * 365)
+            {
+                string capnhat = @"update Sach set TenSach=N'" + txtTenSach.Text + "',MaTheLoai='" + cboxMaTL.Text + "',NamXuatBan='" + datenamxb.Text + "',NhaXuatBan=N'" + txtNhaXB.Text + "',NgayNhap='" + datengaynhap.Text + "',TriGia='" + txtTriGia.Text + "',SoLuong='" + txtSoLuong.Text + "' where MaSach='" + txtMaSach.Text + "'";
+                Conn.executeQuery(capnhat);
+                MessageBox.Show("Cập nhật thành công!!");
+                Load_Data();
+            }
+            else
+                MessageBox.Show("Khoảng cách năm xuất bản lớn hơn quy định. Khoảng cách phải nhỏ hơn " + KhoangCachXB.ToString() + " năm");
         }
+    
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string them = @"insert into Sach values (N'" + txtTenSach.Text + "','" + cboxMaTL.Text + "','" + datenamxb.Text + "',N'" + txtNhaXB.Text + "','" + datengaynhap.Text + "','" + txtTriGia.Text + "','" + txtSoLuong.Text + "')";
-            Conn.executeQuery(them);
-            MessageBox.Show("Thêm sách thành công!!");
-            Load_Data();
+            if (datengaynhap.Value.Subtract(datenamxb.Value).TotalDays <= KhoangCachXB * 365)
+            {
+                string them = @"insert into Sach values (N'" + txtTenSach.Text + "','" + cboxMaTL.Text + "','" + datenamxb.Text + "',N'" + txtNhaXB.Text + "','" + datengaynhap.Text + "','" + txtTriGia.Text + "','" + txtSoLuong.Text + "')";
+                Conn.executeQuery(them);
+                MessageBox.Show("Thêm sách thành công!!");
+                Load_Data();
+            }
+            else
+                MessageBox.Show("Khoảng cách năm xuất bản lớn hơn quy định. Khoảng cách phải nhỏ hơn " + KhoangCachXB.ToString() + " năm");
         }
 
         private void txtTonTai_KeyPress(object sender, KeyPressEventArgs e)

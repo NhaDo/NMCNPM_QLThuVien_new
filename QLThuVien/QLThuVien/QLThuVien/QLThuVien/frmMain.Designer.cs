@@ -150,9 +150,9 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(493, 200);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 29);
+            this.label5.Size = new System.Drawing.Size(129, 29);
             this.label5.TabIndex = 2;
-            this.label5.Text = "THỂ LOẠI";
+            this.label5.Text = "QUY ĐỊNH";
             // 
             // label9
             // 

@@ -8,15 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using QLThuVien;
+
 
 namespace QLThuVien
 {
     public partial class frmDocGia : Form
     {
+
+        public int TuoiToiDa { get; set; }
+        public int TuoiToiThieu { get; set; }
+
+        public int ThoiHanSuDungThe { get; set; }
         public frmDocGia()
         {
             InitializeComponent();
+
+            this.datehethan.Enabled = false;
+            this.datehethan.Value = datelapthe.Value.AddMonths(ThoiHanSuDungThe);
         }
+
+
         public void Load_Data()
         {
             string str = @"select * from DOCGIA";
@@ -56,7 +68,7 @@ namespace QLThuVien
             txtHoTen.Text = "";
             dateNgaySinh.Text = DateTime.Now.ToString("dd/mm/yyyy");
             datelapthe.Text = DateTime.Now.ToString("dd/mm/yyyy");
-            datehethan.Text = DateTime.Now.ToString("dd/mm/yyyy");
+            datehethan.Text = DateTime.Now.AddMonths(ThoiHanSuDungThe).ToString("dd/mm/yyyy");
             txtLoaiDocGia.Text = "";
             txtDiaChi.Text = "";
             txtEmail.Text = "";
@@ -91,10 +103,16 @@ namespace QLThuVien
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            
+    
             if (txtLoaiDocGia.Text != "1" && txtLoaiDocGia.Text != "2" && txtLoaiDocGia.Text != "3")
                 MessageBox.Show("Loại độc giả " + txtLoaiDocGia.Text + " không tồn tại");
             else if (IsAlphabets(txtHoTen.Text) == false)
                 MessageBox.Show("Tên độc giả " + txtHoTen.Text + " chứa kí tự không hợp lệ");
+            else if (DateTime.Now.Subtract(dateNgaySinh.Value).TotalDays< TuoiToiThieu*365)
+                MessageBox.Show("Tuổi độc giả " + txtHoTen.Text + " phải lớn hơn " + TuoiToiThieu.ToString());
+            else if (DateTime.Now.Subtract(dateNgaySinh.Value).TotalDays > TuoiToiDa*365)
+                MessageBox.Show("Tuổi độc giả " + txtHoTen.Text + " phải nhỏ hơn " + TuoiToiDa.ToString());
             else
             {
                 string them = @"insert into DOCGIA(TenDocGia,MaLoaiDocGia,NgaySinh,DiaChi,Email,NgayLapThe,NgayHetHan,TongNo) values('"
@@ -146,6 +164,16 @@ namespace QLThuVien
         private void dataDocGia_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void datehethan_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void datelapthe_ValueChanged(object sender, EventArgs e)
+        {
+            this.datehethan.Value = datelapthe.Value.AddMonths(ThoiHanSuDungThe);
         }
     }
 }

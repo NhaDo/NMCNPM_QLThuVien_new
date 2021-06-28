@@ -15,7 +15,8 @@ namespace QLThuVien
 
     public partial class frmTraSach : Form
     {
-        int NgayMuonToiDa = 4;
+        public int NgayMuonMax { get; set; }
+        public int TienPhatMotNgay { get; set; }
         public frmTraSach()
         {
             InitializeComponent();
@@ -101,13 +102,30 @@ namespace QLThuVien
         private void btnTra_Click(object sender, EventArgs e)
         {
             DateTime ngaytra = Convert.ToDateTime(cboxNgayMuon.Text);
-            if (Kiemtra() == 1)
-            {
-               
+                    
                 //
                 foreach (var listBoxItem in listBox1.Items)
                 {
-                    string tra = @"update PHIEUMUONTRA set NgayTra=getdate()
+
+                if (DateTime.Now.Subtract(ngaytra).TotalDays <= NgayMuonMax)
+                {
+                    string upTienPhat =
+                        @"update PHIEUMUONTRA set (TienPhat=TienPhat+0) where MaPM='" + cboxMaPM.Text
+                        + "' and MaDG='" + cboxMaDG.Text + "'";
+                    Conn.executeQuery(upTienPhat);
+                }
+                else
+                {
+                    string upTienPhat =
+                        @"update PHIEUMUONTRA 
+                        set (TienPhat=TienPhat+(select GiaTriThamSo from THAMSO
+                                        where MaThamSo=7)*
+                                        DATEDIFF(day,'" + DateTime.Now.ToString("dd/mm/yyyy") + "','" + cboxNgayMuon.Text + "') '"
+                        + "'where MaMuonTra='" + cboxMaPM.Text
+                        + "' and MaDG='" + cboxMaDG.Text + "'";
+                    Conn.executeQuery(upTienPhat);
+                }
+                string tra = @"update PHIEUMUONTRA set NgayTra=getdate()
                                 where MaCuonSach='"+ listBoxItem.ToString() 
                                 + "' and PHIEUMUONTRA.MaMuonTra='" + cboxMaPM.Text 
                                 + "' and PHIEUMUONTRA.NgayMuon='" + cboxNgayMuon.Text + "')";
@@ -117,46 +135,14 @@ namespace QLThuVien
                     //MessageBox.Show(tra);
                     Conn.executeQuery(tra);
                 }
+
+            if (Kiemtra() == 1)
+            {
                 MessageBox.Show("Bạn đã trả hết sách thành công!! Bạn có thể mượn ở lần tới.");
                 listBox1.Items.Clear();
-            }
+            }            
             else
             {
-
-                foreach (var listBoxItem in listBox1.Items)
-                {
-                    if (DateTime.Now.Subtract(ngaytra).TotalDays <= NgayMuonToiDa)
-                    {
-                        string upTienPhat =
-                            @"update PHIEUMUONTRA set (TienPhat=TienPhat+0) where MaPM='" + cboxMaPM.Text
-                            + "' and MaDG='" + cboxMaDG.Text + "'";
-                        Conn.executeQuery(upTienPhat);
-                    }
-                    else
-                    {
-                        string upTienPhat =
-                            @"update PHIEUMUONTRA 
-                        set (TienPhat=TienPhat+(select GiaTriThamSo from THAMSO
-                                        where MaThamSo=7)*
-                                        DATEDIFF(day,'" + DateTime.Now.ToString("dd/mm/yyyy") + "','" + cboxNgayMuon.Text + "') '"
-                            + "'where MaMuonTra='" + cboxMaPM.Text
-                            + "' and MaDG='" + cboxMaDG.Text + "'";
-                        Conn.executeQuery(upTienPhat);
-                    }
-
-
-
-
-                    string tra = @"delete from tblChiTietMuon where MaSach=(select MaSach from tblSach where tblSach.TenSach=N'" + listBoxItem.ToString() + "' and tblChiTietMuon.MaPM='" + cboxMaPM.Text + "' and tblChiTietMuon.NgayThue='" + cboxNgayMuon.Text + "')";
-                    string upTontai = @"update tblSach set TonTai=(TonTai+1) where MaSach=(select MaSach from tblSach where tblSach.TenSach=N'" + listBoxItem.ToString() + "')";
-                    string upSLMuon = @"update tblSach set SoLanMuon=(SoLanMuon-1) where MaSach=(select MaSach from tblSach where tblSach.TenSach=N'" + listBoxItem.ToString() + "')";
-                    //MessageBox.Show(upTontai);
-                    Conn.executeQuery(upTontai);
-                    //MessageBox.Show(upSLMuon);
-                    Conn.executeQuery(upSLMuon);
-                    //MessageBox.Show(tra);
-                    Conn.executeQuery(tra);
-                }
                 MessageBox.Show("Bạn đã trả sách thành công nhưng chưa đủ!!");
                 listBox1.Items.Clear();
             }

@@ -12,6 +12,7 @@ namespace QLThuVien
 {
     public partial class frmMuonSach : Form
     {
+        public int  SoSachMuonMax {get; set;}
         public frmMuonSach()
         {
             InitializeComponent();
@@ -60,10 +61,13 @@ namespace QLThuVien
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dataSach.SelectedRows)
-            {
-                listBox1.Items.Add(row.Cells[0].Value.ToString());
-            }
+            if (listBox1.Items.Count <= SoSachMuonMax)
+                foreach (DataGridViewRow row in dataSach.SelectedRows)
+                {
+                    listBox1.Items.Add(row.Cells[0].Value.ToString());
+                }
+            else
+                MessageBox.Show("Không được vượt quá số sách mượn là: " + SoSachMuonMax.ToString());
         }
 
         private void dataTL_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

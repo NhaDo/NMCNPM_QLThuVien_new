@@ -14,7 +14,14 @@ namespace QLThuVien
 {
     public partial class frmMain : Form
     {
+
+
+        public int[] tham_so = new int[7] { 18, 55, 6, 8, 5, 4, 1000 };
+
+
+
         string username, password;
+
         public frmMain()
         {
             InitializeComponent();
@@ -56,51 +63,73 @@ namespace QLThuVien
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            Form TL = new frmQuyDinh();
-            TL.ShowDialog();
+            Form QD = new frmQuyDinh();
+            QD.Show();            
+            QD.FormClosed += new FormClosedEventHandler(QD_formclosed);
+
         }
+        void QD_formclosed(object sender, FormClosedEventArgs e)
+        {
+            frmQuyDinh QD = sender as frmQuyDinh;
+            tham_so = QD.get_thamso();
+        }
+
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Form DG = new frmDocGia();
-            DG.ShowDialog();
+            frmDocGia DG = new frmDocGia();
+            DG.Show();
+            DG.TuoiToiThieu = tham_so[0];
+            DG.TuoiToiDa = tham_so[1];
+            DG.ThoiHanSuDungThe = tham_so[2];
+            DG.FormClosed += new FormClosedEventHandler(DG_formclosed);
+            
         }
 
-
+        void DG_formclosed(object sender, FormClosedEventArgs e)
+        {
+           Form DG = this;
+           //tham_so = DG
+        }
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Form S = new frmDanhMucSach();
-            S.ShowDialog();
+            frmDanhMucSach S = new frmDanhMucSach();
+            S.KhoangCachXB = tham_so[3];
+            S.Show();
         }
 
         private void pictureBox12_Click(object sender, EventArgs e)
         {
             Form Tra = new frmPhieuThu();
-            Tra.ShowDialog();
+            Tra.Show();
         }
 
         private void độcGiảToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form DG = new frmDocGia();
-            DG.ShowDialog();
+            DG.Show();
+            
+
         }
+
+       
 
         private void sáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form S = new frmDanhMucSach();
-            S.ShowDialog();
+            S.Show();
         }
 
         private void mượnSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form Muon = new frmMuonSach();
-            Muon.ShowDialog();
+            Muon.Show();
         }
 
         private void trảSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form Tra = new frmPhieuThu();
-            Tra.ShowDialog();
+            Tra.Show();
         }
 
 
@@ -190,32 +219,40 @@ namespace QLThuVien
         private void thốngKêNhanhToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form TK = new frmThongKe();
-            TK.ShowDialog();
+            TK.Show();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Form TK = new frmThongKe();
-            TK.ShowDialog();
+            TK.Show();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             Form BC = new frmBaoCao();
-            BC.ShowDialog();
+            BC.Show();
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            Form Tra = new frmTraSach();
-            Tra.ShowDialog();
+            frmTraSach Tra = new frmTraSach();
+            Tra.NgayMuonMax = tham_so[5];
+            Tra.TienPhatMotNgay = tham_so[6];
+            
+            Tra.Show();
         }
 
         private void pictureBox13_Click(object sender, EventArgs e)
         {
-            Form Muon = new frmMuonSach();
-            Muon.ShowDialog();
+            frmMuonSach Muon = new frmMuonSach();
+            Muon.Show();
+            
+            Muon.SoSachMuonMax = tham_so[4];
         }
 
     }
+
+    
+
 }

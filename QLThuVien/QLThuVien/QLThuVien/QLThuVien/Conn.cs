@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
-
+using System.IO;
 
 namespace QLThuVien
 {
@@ -20,7 +20,14 @@ namespace QLThuVien
 
         public static void openConnection()
         {
-            source = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Library_DB.mdf;Integrated Security=True";
+
+            string path = Path.Combine(Environment.CurrentDirectory, "");
+            path = path.Substring(0, path.LastIndexOf(@"\"));
+            path = path.Substring(0, path.LastIndexOf(@"\"));
+            path = path.Substring(0, path.LastIndexOf(@"\"));
+
+
+            source = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + path + @"\Library_DB.mdf;Integrated Security=True";
             cnn = new SqlConnection(source);
             try
             {
@@ -53,6 +60,8 @@ namespace QLThuVien
 
         }
 
+
+
         public static DataSet getDataSet(String sql)
         {
 
@@ -73,5 +82,9 @@ namespace QLThuVien
             cnn.Close();
             return ds.Tables[0];
         }
+
+
+
+
     }
 }

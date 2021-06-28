@@ -12,6 +12,9 @@ namespace QLThuVien
 {
     public partial class frmQuyDinh : Form
     {
+
+
+
         public frmQuyDinh()
         {
             InitializeComponent();
@@ -73,6 +76,12 @@ namespace QLThuVien
             }
         }
 
+        public int[] thamso = new int[7];
+
+        public int[] get_thamso()
+        {
+            return thamso;
+        }
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             string up = @"update ThamSo set GiaTriThamSo='" + txtGiaTri.Text + "' where TenThamSo='" + txtQuyDinh.Text + "'";
@@ -83,6 +92,15 @@ namespace QLThuVien
                 Conn.executeQuery(up);
                 Load_TL();
             }
+
+
+            for (int i = 0; i<= 6; i++)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = dataQuyDinh.Rows[i];
+                thamso[i] = Int32.Parse(row.Cells[0].Value.ToString());
+            }
+
         }
 
         private void btnMoi_Click(object sender, EventArgs e)
@@ -91,4 +109,6 @@ namespace QLThuVien
             txtGiaTri.Text = "";
         }
     }
+
+
 }
