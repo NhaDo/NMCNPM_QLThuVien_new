@@ -205,10 +205,17 @@ namespace QLThuVien
             BC.ShowDialog();
         }
 
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Form Tra = new frmTraSach();
+            Tra.ShowDialog();
+        }
+
         private void pictureBox13_Click(object sender, EventArgs e)
         {
             Form Muon = new frmMuonSach();
             Muon.ShowDialog();
         }
+
     }
 }

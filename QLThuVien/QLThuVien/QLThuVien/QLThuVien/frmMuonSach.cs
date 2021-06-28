@@ -18,27 +18,27 @@ namespace QLThuVien
         }
         public void Load_TL()
         {
-            string str = @"select MaTL,TenTL from tblTheLoai";
+            string str = @"select MaTheLoai,TenTheLoai from THELOAI";
             DataTable dt = Conn.getDataTable(str);
             dataTL.DataSource = dt;
         }
         public void Load_Sach()
         {
-            string str = @"select TenSach,TacGia,NhaXuatBan from tblSach";
+            string str = @"select CUONSACH.MaCuonSach,CUONSACH.MaSach,TenSach,NhaXuatBan from SACH, CUONSACH where SACH.MaSach = CUONSACH.MaSach";
             DataTable dt = Conn.getDataTable(str);
             dataSach.DataSource = dt;
         }
         public void Load_cbox()
         {
-            string sqlcboxSup = "select * from tblDocGia";
-            cboxMaDG.DisplayMember = "MaDG";
+            string sqlcboxSup = "select * from DOCGIA";
+            cboxMaDG.DisplayMember = "MaDocGia";
             cboxMaDG.DataSource = Conn.getDataTable(sqlcboxSup);
         }
         private void frmMuonSach_Load(object sender, EventArgs e)
         {
+            Load_TL();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.Load_cbox();
-            Load_TL();
             Load_Sach();
             //txtMaPM.Text = "PM00";
             //
@@ -46,14 +46,14 @@ namespace QLThuVien
 
         private void txtTimTL_TextChanged(object sender, EventArgs e)
         {
-            string str = @"select MaTL,TenTL from tblTheLoai where TenTL LIKE N'%"+txtTimTL.Text+"%'";
+            string str = @"select MaTheLoai,TenTheLoai from THELOAI where TenTheLoai LIKE N'%" + txtTimTL.Text + "%'";
             DataTable dt = Conn.getDataTable(str);
             dataTL.DataSource = dt;
         }
 
         private void txtTimSach_TextChanged(object sender, EventArgs e)
         {
-            string str = @"select TenSach,TacGia,NhaXuatBan from tblSach where TenSach LIKE N'%"+txtTimSach.Text+"%'";
+            string str = @"select CUONSACH.MaCuonSach,CUONSACH.MaSach,TenSach,NhaXuatBan from SACH where TenSach LIKE N'%" + txtTimSach.Text + "%' or NhaXuatBan LIKE N' % " + txtTimSach.Text + " % '";
             DataTable dt = Conn.getDataTable(str);
             dataSach.DataSource = dt;
         }
@@ -76,9 +76,9 @@ namespace QLThuVien
             }
             catch (Exception)
             { }
-            string sach = @"select TenSach,TacGia,NhaXuatBan from tblSach where MaTL='" + txtChonMaTL.Text + "'";
-            DataTable dt = Conn.getDataTable(sach);
-            dataSach.DataSource = dt;
+            //string sach = @"select CUONSACH.MaCuonSach,CUONSACH.MaSach,TenSach,NhaXuatBan from CUONSACH,SACH where CUONSACH.MaSach=SACH.MaSach and MaTheLoai='" + txtChonMaTL.Text + "'";
+            //DataTable dt = Conn.getDataTable(sach);
+            //dataSach.DataSource = dt;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -89,30 +89,23 @@ namespace QLThuVien
         }
         private void btnMuon_Click(object sender, EventArgs e)
         {
-            if (txtMaPM.Text == "")
-                MessageBox.Show("Mã Phiếu mượn không được trống!!");
-            else
+            //if (txtMaPM.Text == "")
+            //MessageBox.Show("Mã Phiếu mượn không được trống!!");
+            //else
             {
-                string muon = @"insert into tblHoaDonMuon(MaPM,MaDG,TinhTrang) values('" + txtMaPM.Text + "','" + cboxMaDG.Text + "',0)"; // 0 chưa trả
-                //MessageBox.Show(muon);
-                Conn.executeQuery(muon);
 
-                //
-                // Thêm vào CT Mượn
                 foreach (var listBoxItem in listBox1.Items)
                 {
                     //MessageBox.Show(listBoxItem.ToString());
-                    string ctMuon = @"insert into tblChiTietMuon(MaPM,MaSach,NgayThue,NgayTra) values('" + txtMaPM.Text + "',(select MaSach from tblSach where tblSach.TenSach=N'" + listBoxItem.ToString() + "'),'" + dateNgayMuon.Text + "','" + dateNgayTra.Text + "')";
-                    string upTontai = @"update tblSach set TonTai=(TonTai-1) where MaSach=(select MaSach from tblSach where tblSach.TenSach=N'" + listBoxItem.ToString() + "')";
-                    string upSLMuon = @"update tblSach set SoLanMuon=(SoLanMuon+1) where MaSach=(select MaSach from tblSach where tblSach.TenSach=N'" + listBoxItem.ToString() + "')";
-                    Conn.executeQuery(ctMuon);
-                    Conn.executeQuery(upTontai);
-                    Conn.executeQuery(upSLMuon);
+                    string PHIEUMUONTRA = @"insert into PHIEUMUONTRA(MaMuonTra,MaCuonSach,MaDocGia,NgayMuon,TienPhat) values('" + txtMaPM.Text + "','" + listBoxItem.ToString() + "','" + cboxMaDG.Text + "','" + dateNgayMuon.Text + "'0,'" + "')";
+                    string upTinhTrang = @"update CUONSACH set TinhTrang=N'được mượn' where MaCuonSach=N'" + listBoxItem.ToString() + "')";
+                    Conn.executeQuery(PHIEUMUONTRA);
+                    Conn.executeQuery(upTinhTrang);
                 }
             }
-                MessageBox.Show("Mượn thành công!!");
-                listBox1.Items.Clear();
-            
+            MessageBox.Show("Mượn thành công!!");
+            listBox1.Items.Clear();
+
             //
         }
 

@@ -72,7 +72,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\..\..\..\..\..\..\export data\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -141,6 +143,12 @@
     <Compile Include="frmPhieuThu.Designer.cs">
       <DependentUpon>frmPhieuThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTraSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTraSach.Designer.cs">
+      <DependentUpon>frmTraSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="Library_DBDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -175,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhieuThu.resx">
       <DependentUpon>frmPhieuThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTraSach.resx">
+      <DependentUpon>frmTraSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -233,6 +244,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Library_DB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Ausleihe-formatkey-jpg-w320m.jpg" />
+    <None Include="Resources\Anh-dep-sach-tacgiavn.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
