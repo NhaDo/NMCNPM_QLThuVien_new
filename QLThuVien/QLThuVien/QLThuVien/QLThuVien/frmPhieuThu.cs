@@ -47,12 +47,12 @@ namespace QLThuVien
             { }
         }
 
-        private void dataPhieuThu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataPhieuThu_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
 
         }
 
-        private void dataPhieuThu_CellClick(object sender, DataGridViewCellEventArgs e)
+            private void dataPhieuThu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -123,6 +123,11 @@ namespace QLThuVien
             string str = @"select * from PhieuThu where MaDocGia LIKE '%" + txtTimKiem.Text + "%'";
             DataTable dt = Conn.getDataTable(str);
             dataPhieuThu.DataSource = dt;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
