@@ -32,12 +32,13 @@ namespace QLThuVien
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCao));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.nudNam = new System.Windows.Forms.NumericUpDown();
-            this.nudThang = new System.Windows.Forms.NumericUpDown();
-            this.dataTraCuu = new System.Windows.Forms.DataGridView();
             this.btnSave = new System.Windows.Forms.Button();
+            this.nudThang = new System.Windows.Forms.NumericUpDown();
+            this.nudNam = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dataTraCuu = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,8 +46,8 @@ namespace QLThuVien
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudThang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTraCuu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,41 +68,16 @@ namespace QLThuVien
             this.panel1.UseWaitCursor = true;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label4
+            // btnSave
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(214, 45);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 23);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Tháng";
-            this.label4.UseWaitCursor = true;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // nudNam
-            // 
-            this.nudNam.Location = new System.Drawing.Point(344, 43);
-            this.nudNam.Margin = new System.Windows.Forms.Padding(4);
-            this.nudNam.Maximum = new decimal(new int[] {
-            1980,
-            0,
-            0,
-            0});
-            this.nudNam.Minimum = new decimal(new int[] {
-            1980,
-            0,
-            0,
-            0});
-            this.nudNam.Name = "nudNam";
-            this.nudNam.Size = new System.Drawing.Size(131, 30);
-            this.nudNam.TabIndex = 8;
-            this.nudNam.Value = new decimal(new int[] {
-            1980,
-            0,
-            0,
-            0});
-            this.nudNam.ValueChanged += new System.EventHandler(this.nudNam_ValueChanged);
+            this.btnSave.Location = new System.Drawing.Point(616, 34);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(114, 45);
+            this.btnSave.TabIndex = 10;
+            this.btnSave.Text = "Xuất file";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseWaitCursor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // nudThang
             // 
@@ -120,12 +96,50 @@ namespace QLThuVien
             this.nudThang.Name = "nudThang";
             this.nudThang.Size = new System.Drawing.Size(52, 30);
             this.nudThang.TabIndex = 9;
+            this.nudThang.UseWaitCursor = true;
             this.nudThang.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nudThang.ValueChanged += new System.EventHandler(this.nudThang_ValueChanged);
+            // 
+            // nudNam
+            // 
+            this.nudNam.Location = new System.Drawing.Point(344, 43);
+            this.nudNam.Margin = new System.Windows.Forms.Padding(4);
+            this.nudNam.Maximum = new decimal(new int[] {
+            1980,
+            0,
+            0,
+            0});
+            this.nudNam.Minimum = new decimal(new int[] {
+            1980,
+            0,
+            0,
+            0});
+            this.nudNam.Name = "nudNam";
+            this.nudNam.Size = new System.Drawing.Size(131, 30);
+            this.nudNam.TabIndex = 8;
+            this.nudNam.UseWaitCursor = true;
+            this.nudNam.Value = new decimal(new int[] {
+            1980,
+            0,
+            0,
+            0});
+            this.nudNam.ValueChanged += new System.EventHandler(this.nudNam_ValueChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(214, 45);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 23);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Tháng";
+            this.label4.UseWaitCursor = true;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // dataTraCuu
             // 
@@ -170,16 +184,6 @@ namespace QLThuVien
             this.dataTraCuu.TabIndex = 7;
             this.dataTraCuu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTraCuu_CellContentClick);
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(616, 34);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(114, 45);
-            this.btnSave.TabIndex = 10;
-            this.btnSave.Text = "Xuất file";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "MaCTBC";
@@ -214,6 +218,7 @@ namespace QLThuVien
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            this.Column2.Width = 125;
             // 
             // Column5
             // 
@@ -243,13 +248,14 @@ namespace QLThuVien
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dataTraCuu);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBaoCao";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmBaoCao_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudThang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTraCuu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

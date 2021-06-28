@@ -85,3 +85,28 @@ C:\Users\NhaDo\Desktop\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuV
 C:\Users\NhaDo\Desktop\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\bin\Debug\QLThuVien.exe.config
 C:\Users\NhaDo\Desktop\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\bin\Debug\QLThuVien.exe
 C:\Users\NhaDo\Desktop\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\bin\Debug\QLThuVien.pdb
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\bin\Debug\Library_DB.mdf
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\bin\Debug\Library_DB_log.ldf
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\bin\Debug\frmBaoCao.resx
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\bin\Debug\frmBaoCao.cs
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\bin\Debug\frmBaoCao.Designer.cs
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\bin\Debug\QLThuVien.exe.config
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\bin\Debug\QLThuVien.exe
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\bin\Debug\QLThuVien.pdb
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.csproj.AssemblyReference.cache
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmBaoCao.resources
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmDangNhap.resources
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmDanhMucSach.resources
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmDocGia.resources
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmMain.resources
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmMuonSach.resources
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmQuyDinh.resources
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmThongKe.resources
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmPhieuThu.resources
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmTraSach.resources
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmPhieuMuonTra.resources
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.Properties.Resources.resources
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.csproj.GenerateResource.cache
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.csproj.CoreCompileInputs.cache
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.exe
+C:\Users\Cao Tai\nmcnpm\NMCNPM_QLThuVien_new\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.pdb

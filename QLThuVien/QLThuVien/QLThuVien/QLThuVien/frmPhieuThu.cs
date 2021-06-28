@@ -32,25 +32,9 @@ namespace QLThuVien
             Load_Data();
         }
 
-        private void dataPhieuThu_CellContentClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            try
-            {
-                DataGridViewRow row = new DataGridViewRow();
-                row = dataPhieuThu.Rows[e.RowIndex];
-                txtMaPhieuThu.Text = row.Cells[0].Value.ToString();
-                txtMaDocGia.Text = row.Cells[1].Value.ToString();
-                txtSoTienThu.Text = row.Cells[2].Value.ToString();
-                txtConLai.Text = row.Cells[3].Value.ToString();
-            }
-            catch (Exception)
-            { }
-        }
+        
 
-        private void dataPhieuThu_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
-        }
+        
 
             private void dataPhieuThu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -128,6 +112,26 @@ namespace QLThuVien
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataPhieuThu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = dataPhieuThu.Rows[e.RowIndex];
+                txtMaPhieuThu.Text = row.Cells[0].Value.ToString();
+                txtMaDocGia.Text = row.Cells[1].Value.ToString();
+                txtSoTienThu.Text = row.Cells[2].Value.ToString();
+                txtConLai.Text = row.Cells[3].Value.ToString();
+            }
+            catch (Exception)
+            { }
         }
     }
 }

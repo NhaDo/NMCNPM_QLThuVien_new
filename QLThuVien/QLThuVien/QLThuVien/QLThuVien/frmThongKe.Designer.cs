@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongKe));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
             this.dateNgayTra = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.dataTraCuu = new System.Windows.Forms.DataGridView();
@@ -36,7 +38,6 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSave = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataTraCuu)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +56,17 @@
             this.panel1.Size = new System.Drawing.Size(612, 94);
             this.panel1.TabIndex = 5;
             this.panel1.UseWaitCursor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(484, 22);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(106, 41);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "Xuất file";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseWaitCursor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // dateNgayTra
             // 
@@ -132,25 +144,16 @@
             this.Column4.ReadOnly = true;
             this.Column4.Width = 200;
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(484, 22);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(106, 41);
-            this.btnSave.TabIndex = 4;
-            this.btnSave.Text = "Xuất file";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // frmThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(616, 733);
+            this.ClientSize = new System.Drawing.Size(619, 522);
             this.Controls.Add(this.dataTraCuu);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
