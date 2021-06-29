@@ -108,6 +108,11 @@ namespace QLThuVien
             txtQuyDinh.Text = "";
             txtGiaTri.Text = "";
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 

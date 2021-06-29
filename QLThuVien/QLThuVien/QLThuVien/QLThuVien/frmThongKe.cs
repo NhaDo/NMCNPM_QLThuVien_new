@@ -13,25 +13,39 @@ namespace QLThuVien
 {
     public partial class frmThongKe : Form
     {
-
+        public int SoNgayMuonMax { get; set; }
+        public int TienPhat1Ngay { get; set; }
         public frmThongKe()
         {
             InitializeComponent();
         }
         public void Load_ThongKe(string ngay)
         {
-            string str = @"select MaMuonTra,MaCuonSach,NgayMuon from PhieuMuonTra";
+            string str = @"select MaMuonTra,NgayMuon,NgayTra,TienPhat from PhieuMuonTra where NgayTra IS NULL OR TienPhat > 0";
             DataTable dt = Conn.getDataTable(str);
             dt.Columns.Add("SoNgayTraTre", typeof(string));
             dataTraCuu.DataSource = dt;
             for (int i = 0; i < (dataTraCuu.Rows.Count - 1); i = i + 1)
             {
-                DateTime dates1 = Convert.ToDateTime(dataTraCuu.Rows[i].Cells[2].Value);
-                DateTime dates2 = Convert.ToDateTime(ngay);
+                if(Convert.ToInt32(dataTraCuu.Rows[i].Cells[4].Value) > 0)
+                {
+                    dataTraCuu.Rows[i].Cells[5].Value = Convert.ToInt32(dataTraCuu.Rows[i].Cells[4].Value) / TienPhat1Ngay;
+                }
+                else
+                {
+                    DateTime dates1 = Convert.ToDateTime(dataTraCuu.Rows[i].Cells[2].Value);
+                    DateTime dates2 = Convert.ToDateTime(ngay);
+                    TimeSpan time = dates1.Subtract(dates2);
+                    int days = -(time.Days) - SoNgayMuonMax;
+                    if (days >= 1)
+                    {
+                        dataTraCuu.Rows[i].Cells[5].Value = days.ToString();
+                        dataTraCuu.Rows[i].Cells[4].Value = days * TienPhat1Ngay;
+                    }
+                    else
+                        dataTraCuu.Rows[i].Cells[5].Value = 0;
+                }
 
-                TimeSpan time = dates1.Subtract(dates2);
-                int days = -(time.Days + 5);
-                dataTraCuu.Rows[i].Cells[3].Value = days.ToString();
             }
 
 
@@ -73,6 +87,11 @@ namespace QLThuVien
             }
             xcelApp.Columns.AutoFit();
             xcelApp.Visible = true;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
