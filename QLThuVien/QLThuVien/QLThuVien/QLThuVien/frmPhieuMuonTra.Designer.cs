@@ -31,7 +31,9 @@ namespace QLThuVien
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuMuonTra));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.datengaytra = new System.Windows.Forms.DateTimePicker();
             this.txtMaDocGia = new System.Windows.Forms.TextBox();
             this.datengaymuon = new System.Windows.Forms.DateTimePicker();
             this.txtTienPhat = new System.Windows.Forms.TextBox();
@@ -61,10 +63,15 @@ namespace QLThuVien
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datengaytra = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dataSach = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPhieuMuonTra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSach)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -89,6 +96,15 @@ namespace QLThuVien
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1082, 241);
             this.panel1.TabIndex = 4;
+            // 
+            // datengaytra
+            // 
+            this.datengaytra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datengaytra.Location = new System.Drawing.Point(714, 80);
+            this.datengaytra.Name = "datengaytra";
+            this.datengaytra.Size = new System.Drawing.Size(311, 30);
+            this.datengaytra.TabIndex = 6;
+            this.datengaytra.ValueChanged += new System.EventHandler(this.datengaytra_ValueChanged);
             // 
             // txtMaDocGia
             // 
@@ -325,10 +341,9 @@ namespace QLThuVien
             this.dataPhieuMuonTra.ReadOnly = true;
             this.dataPhieuMuonTra.RowHeadersWidth = 51;
             this.dataPhieuMuonTra.RowTemplate.Height = 24;
-            this.dataPhieuMuonTra.Size = new System.Drawing.Size(1086, 272);
+            this.dataPhieuMuonTra.Size = new System.Drawing.Size(690, 272);
             this.dataPhieuMuonTra.TabIndex = 10;
             this.dataPhieuMuonTra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPhieuMuonTra_CellClick);
-            
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -393,20 +408,76 @@ namespace QLThuVien
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 145;
             // 
-            // datengaytra
+            // label7
             // 
-            this.datengaytra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datengaytra.Location = new System.Drawing.Point(714, 80);
-            this.datengaytra.Name = "datengaytra";
-            this.datengaytra.Size = new System.Drawing.Size(311, 30);
-            this.datengaytra.TabIndex = 6;
-            this.datengaytra.ValueChanged += new System.EventHandler(this.datengaytra_ValueChanged);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(850, 407);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(230, 26);
+            this.label7.TabIndex = 11;
+            this.label7.Text = " Danh sách cuốn sách";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // dataSach
+            // 
+            this.dataSach.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10});
+            this.dataSach.Location = new System.Drawing.Point(708, 436);
+            this.dataSach.Name = "dataSach";
+            this.dataSach.ReadOnly = true;
+            this.dataSach.RowHeadersWidth = 51;
+            this.dataSach.RowTemplate.Height = 24;
+            this.dataSach.Size = new System.Drawing.Size(519, 272);
+            this.dataSach.TabIndex = 12;
+            this.dataSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSach_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "MaCuonSach";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Mã Cuốn Sách";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "TenSach";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Tên Cuốn Sách";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 175;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "TinhTrang";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Tình Trạng";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 150;
             // 
             // frmPhieuMuonTra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 707);
+            this.ClientSize = new System.Drawing.Size(1231, 707);
+            this.Controls.Add(this.dataSach);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.dataPhieuMuonTra);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -421,6 +492,7 @@ namespace QLThuVien
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataPhieuMuonTra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSach)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,5 +531,10 @@ namespace QLThuVien
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DateTimePicker datengaymuon;
         private System.Windows.Forms.DateTimePicker datengaytra;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dataSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
     }
 }

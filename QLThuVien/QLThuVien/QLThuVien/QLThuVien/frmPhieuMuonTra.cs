@@ -29,6 +29,9 @@ namespace QLThuVien
             string str = @"select * from phieumuontra";
             DataTable dt = Conn.getDataTable(str);
             dataPhieuMuonTra.DataSource = dt;
+            string str2 = @"select CS.MaCuonSach,S.TenSach,Cs.TinhTrang from Sach S, CUONSACH CS where S.MaSach = CS.MaSach";
+            DataTable dt2 = Conn.getDataTable(str2);
+            dataSach.DataSource = dt2;
         }
 
         private void dataPhieuMuonTra_Load(object sender, EventArgs e)
@@ -84,7 +87,7 @@ namespace QLThuVien
                                                                     + txtTienPhat.Text + "','"
                                                                     + txtSoTienTra.Text + "')";
                 Conn.executeQuery(them);
-                string here = @"update CuonSach set TinhTrang=N'Đang mượn' where MaCuonSach='" + txtMaCuonSach.Text + "')";
+                string here = @"update CUONSACH set TinhTrang = N'được mượn' where MaCuonSach='" + txtMaCuonSach.Text + "'";
                 Conn.executeQuery(here);
                 MessageBox.Show("Thêm phiếu thành công!");
 
@@ -106,7 +109,7 @@ namespace QLThuVien
                     try
                     {
                         Conn.executeQuery(xoa);
-                        string here = @"update CuonSach set TinhTrang=N'Có sẵn')";
+                        string here = @"update CuonSach set TinhTrang=N'có sẵn' where MaCuonSach='" + txtMaCuonSach.Text + "'";
                         Conn.executeQuery(here);
                         Load_Data();
                     }
@@ -210,6 +213,11 @@ namespace QLThuVien
             {
                 txtTienPhat.Text = "0";
             }    
+        }
+
+        private void dataSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

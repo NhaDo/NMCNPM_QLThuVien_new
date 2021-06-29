@@ -122,7 +122,7 @@ namespace QLThuVien
 
         private void mượnSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form Muon = new frmMuonSach();
+            Form Muon = new frmPhieuMuonTra();
             Muon.Show();
         }
 

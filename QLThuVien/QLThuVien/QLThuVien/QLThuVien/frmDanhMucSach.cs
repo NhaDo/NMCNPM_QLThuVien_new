@@ -114,6 +114,14 @@ namespace QLThuVien
             {
                 string them = @"insert into Sach values (N'" + txtTenSach.Text + "','" + cboxMaTL.Text + "','" + datenamxb.Text + "',N'" + txtNhaXB.Text + "','" + datengaynhap.Text + "','" + txtTriGia.Text + "','" + txtSoLuong.Text + "')";
                 Conn.executeQuery(them);
+                Load_Data();
+                int z = dataSach.Rows.Count-2;
+                txtMaSach.Text = dataSach.Rows[z].Cells[0].Value.ToString();
+                for (int i = 0; i < Convert.ToInt32(txtSoLuong.Text); i++)
+                {
+                    string them2 = @"insert into CUONSACH values ('" + txtMaSach.Text + "',N'có sẵn')'";
+                    Conn.executeQuery(them2);
+                }
                 MessageBox.Show("Thêm sách thành công!!");
                 Load_Data();
             }
