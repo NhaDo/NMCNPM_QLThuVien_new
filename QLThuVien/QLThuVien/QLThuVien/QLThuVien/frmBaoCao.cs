@@ -15,6 +15,9 @@ namespace QLThuVien
         public frmBaoCao()
         {
             InitializeComponent();
+                        nudNam.Maximum = DateTime.Now.Year;
+            nudNam.Value = DateTime.Now.Year;
+            nudThang.Value = DateTime.Now.Month;
         }
         public void Load_BaoCao(int thang, int nam)
         {
@@ -22,18 +25,42 @@ namespace QLThuVien
             //                from BCMSTTL BC join CTBCMSTTL CT on 
             //                                CT.MaBC = Bc.MaBC join THELOAI TL on 
             //                                    CT.MaTheLoai = TL.MaTheLoai where (BC.Thang='" + thang + "'and Nam='" + nam + "')";
-            string str = @"select THELOAI.MaTheLoai, TenTheLoai, CUONSACH.MaSach, CUONSACH.MaCuonSach, CUONSACH.TinhTrang
-                           from THELOAI, PHIEUMUONTRA, SACH, CUONSACH
-                            where SACH.MaSach = CUONSACH.MaSach
-                            and SACH.MaTheLoai=THELOAI.MaTheLoai
-                            and MONTH(PHIEUMUONTRA.NgayMuon) = '" + nudThang.Value.ToString()
-                            + "'and YEAR(PHIEUMUONTRA.NgayMuon) = '" + nudNam.Value.ToString() + "'";
-            
+            string str = @"select TenTheLoai, COUNT(*) AS SoLuotMuon"
+                            + " from THELOAI, PHIEUMUONTRA, SACH, CUONSACH "
+                            + "where SACH.MaSach = CUONSACH.MaSach "
+                            + "and SACH.MaTheLoai=THELOAI.MaTheLoai "
+                            + "and MONTH(PHIEUMUONTRA.NgayMuon) =  '" + nudThang.Value.ToString()
+                            + "' and YEAR(PHIEUMUONTRA.NgayMuon) = '" + nudNam.Value.ToString()
+                            + "' GROUP BY TenTheLoai";
             DataTable dt = Conn.getDataTable(str);
             dataTraCuu.DataSource = dt;
-            nudNam.Maximum = DateTime.Now.Year;
-            nudNam.Value = DateTime.Now.Year;
+
+            if (dataTraCuu.Rows.Count > 1)
+            {
+                int SUM_TongSoLuotMuon = 0;
+                foreach (DataGridViewRow row in dataTraCuu.Rows)
+                {
+                    if (row.Index <= (dataTraCuu.RowCount - 2))
+                    {
+                        string n = row.Cells[4].Value.ToString();
+                        SUM_TongSoLuotMuon += Convert.ToInt32(row.Cells[4].Value.ToString());
+                    }
+                }
+
+                foreach (DataGridViewRow row in dataTraCuu.Rows)
+                {
+                    if (row.Index <= (dataTraCuu.RowCount - 2))
+                    {
+                        int LuotMuon = Convert.ToInt32(row.Cells[4].Value.ToString());
+                        row.Cells[1].Value = Convert.ToString(LuotMuon * 100 / SUM_TongSoLuotMuon) + "%";
+                        row.Cells[2].Value = Convert.ToString(SUM_TongSoLuotMuon);
+                    }
+                }
+
+            }
         }
+            
+
         private void dataTraCuu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

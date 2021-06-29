@@ -66,7 +66,6 @@ C:\Users\NhaDo\Desktop\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuV
 C:\Users\NhaDo\Desktop\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmDanhMucSach.resources
 C:\Users\NhaDo\Desktop\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmDocGia.resources
 C:\Users\NhaDo\Desktop\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmMain.resources
-C:\Users\NhaDo\Desktop\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmMuonSach.resources
 C:\Users\NhaDo\Desktop\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmQuyDinh.resources
 C:\Users\NhaDo\Desktop\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmThongKe.resources
 C:\Users\NhaDo\Desktop\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmPhieuThu.resources
