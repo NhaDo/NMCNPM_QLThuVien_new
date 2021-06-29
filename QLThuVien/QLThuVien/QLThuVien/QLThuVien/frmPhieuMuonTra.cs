@@ -123,23 +123,35 @@ namespace QLThuVien
 
         private void btnCapNhat_Click_1(object sender, EventArgs e)
         {
-            if (txtMaMuonTra != null)
-            {
-
-                string capnhat = @"update PHIEUMUONTRA set MaCuonSach='" + txtMaCuonSach.Text + "',MaDocGia='"
-                                                                        + txtMaDocGia.Text + "',NgayMuon='"
-                                                                        + datengaymuon.Text + "',NgayTra='"
-                                                                        + datengaytra.Text + "',TienPhat='"
-                                                                        + txtTienPhat.Text + "',SoTienTra='"
-                                                                        + txtSoTienTra.Text + "' where MaMuonTra='"
-                                                                        + txtMaMuonTra.Text + "'";
-                Conn.executeQuery(capnhat);
-                MessageBox.Show("Cập nhật thành công!!");
-                Load_Data();
-            }
+            if (txtMaMuonTra.Text == "")
+                MessageBox.Show("Mã mượn trả không được để trống!!");
             else
             {
-                MessageBox.Show("Mã mượn trả không được để trống!!");
+                if (datengaytra.Text == datengaymuon.Text)
+                {
+                    string capnhat = @"update PHIEUMUONTRA set MaCuonSach='" + txtMaCuonSach.Text + "',MaDocGia='"
+                                                            + txtMaDocGia.Text + "',NgayMuon='"
+                                                            + datengaymuon.Text + "'TienPhat='"
+                                                            + txtTienPhat.Text + "',SoTienTra='"
+                                                            + txtSoTienTra.Text + "' where MaMuonTra='"
+                                                            + txtMaMuonTra.Text + "'";
+                    Conn.executeQuery(capnhat);
+                    MessageBox.Show("Cập nhật thành công!!");
+                    Load_Data();
+                }
+                else
+                {
+                    string capnhat = @"update PHIEUMUONTRA set MaCuonSach='" + txtMaCuonSach.Text + "',MaDocGia='"
+                                        + txtMaDocGia.Text + "',NgayMuon='"
+                                        + datengaymuon.Text + "',NgayTra='"
+                                        + datengaytra.Text + "',TienPhat='"
+                                        + txtTienPhat.Text + "',SoTienTra='"
+                                        + txtSoTienTra.Text + "' where MaMuonTra='"
+                                        + txtMaMuonTra.Text + "'";
+                    Conn.executeQuery(capnhat);
+                    MessageBox.Show("Cập nhật thành công!!");
+                    Load_Data();
+                }
             }    
         }
 
