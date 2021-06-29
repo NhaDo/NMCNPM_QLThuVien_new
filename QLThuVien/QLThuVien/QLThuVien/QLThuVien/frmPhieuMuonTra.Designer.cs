@@ -89,7 +89,6 @@ namespace QLThuVien
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1082, 241);
             this.panel1.TabIndex = 4;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txtMaDocGia
             // 
@@ -97,7 +96,6 @@ namespace QLThuVien
             this.txtMaDocGia.Name = "txtMaDocGia";
             this.txtMaDocGia.Size = new System.Drawing.Size(323, 30);
             this.txtMaDocGia.TabIndex = 5;
-            
             // 
             // datengaytra
             // 
@@ -106,7 +104,6 @@ namespace QLThuVien
             this.datengaytra.Name = "datengaytra";
             this.datengaytra.Size = new System.Drawing.Size(311, 30);
             this.datengaytra.TabIndex = 4;
-            
             // 
             // datengaymuon
             // 
@@ -115,7 +112,6 @@ namespace QLThuVien
             this.datengaymuon.Name = "datengaymuon";
             this.datengaymuon.Size = new System.Drawing.Size(311, 30);
             this.datengaymuon.TabIndex = 2;
-            
             // 
             // txtTienPhat
             // 
@@ -123,7 +119,6 @@ namespace QLThuVien
             this.txtTienPhat.Name = "txtTienPhat";
             this.txtTienPhat.Size = new System.Drawing.Size(311, 30);
             this.txtTienPhat.TabIndex = 1;
-            
             // 
             // label8
             // 
@@ -152,7 +147,6 @@ namespace QLThuVien
             this.txtMaCuonSach.Name = "txtMaCuonSach";
             this.txtMaCuonSach.Size = new System.Drawing.Size(323, 30);
             this.txtMaCuonSach.TabIndex = 1;
-            
             // 
             // label3
             // 
@@ -183,7 +177,6 @@ namespace QLThuVien
             this.label2.Size = new System.Drawing.Size(112, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã Độc Giả";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtSoTienTra
             // 
@@ -191,7 +184,6 @@ namespace QLThuVien
             this.txtSoTienTra.Name = "txtSoTienTra";
             this.txtSoTienTra.Size = new System.Drawing.Size(311, 30);
             this.txtSoTienTra.TabIndex = 1;
-           
             // 
             // label5
             // 
@@ -209,7 +201,6 @@ namespace QLThuVien
             this.txtMaMuonTra.Name = "txtMaMuonTra";
             this.txtMaMuonTra.Size = new System.Drawing.Size(323, 30);
             this.txtMaMuonTra.TabIndex = 1;
-            
             // 
             // label1
             // 
@@ -220,7 +211,6 @@ namespace QLThuVien
             this.label1.Size = new System.Drawing.Size(129, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Mượn Trả";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -343,10 +333,10 @@ namespace QLThuVien
             this.dataPhieuMuonTra.ReadOnly = true;
             this.dataPhieuMuonTra.RowHeadersWidth = 51;
             this.dataPhieuMuonTra.RowTemplate.Height = 24;
-            this.dataPhieuMuonTra.Size = new System.Drawing.Size(1084, 272);
+            this.dataPhieuMuonTra.Size = new System.Drawing.Size(1086, 272);
             this.dataPhieuMuonTra.TabIndex = 10;
             this.dataPhieuMuonTra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPhieuMuonTra_CellClick);
-           
+            this.dataPhieuMuonTra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPhieuMuonTra_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -368,7 +358,7 @@ namespace QLThuVien
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "MaTheLoai";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "MaDocGia";
             this.dataGridViewTextBoxColumn3.HeaderText = "Mã Độc Giả";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";

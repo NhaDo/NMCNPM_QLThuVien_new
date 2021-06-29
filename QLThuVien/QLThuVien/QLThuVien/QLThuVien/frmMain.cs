@@ -246,10 +246,10 @@ namespace QLThuVien
         private void pictureBox13_Click(object sender, EventArgs e)
         {
             frmPhieuMuonTra MuonTra = new frmPhieuMuonTra();
-            MuonTra.Show();
             MuonTra.SoSachMuonMax = tham_so[4];
             MuonTra.SoNgayMuonMax = tham_so[5];
-            MuonTra.TienPhatMotNgay = tham_so[6];            
+            MuonTra.TienPhatMotNgay = tham_so[6];
+            MuonTra.Show();
         }
     }
 

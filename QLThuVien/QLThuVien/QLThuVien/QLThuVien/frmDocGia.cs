@@ -175,5 +175,10 @@ namespace QLThuVien
         {
             this.datehethan.Value = datelapthe.Value.AddMonths(ThoiHanSuDungThe);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

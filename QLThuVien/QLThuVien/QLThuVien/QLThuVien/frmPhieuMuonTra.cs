@@ -31,26 +31,10 @@ namespace QLThuVien
             dataPhieuMuonTra.DataSource = dt;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void dataPhieuMuonTra_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             Load_Data();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnThem_Click_1(object sender, EventArgs e)
@@ -60,7 +44,7 @@ namespace QLThuVien
             {
                 foreach (DataGridViewRow row in dataPhieuMuonTra.Rows)
                 {
-                    if (row.Index<=(dataPhieuMuonTra.RowCount-2) && row.Cells[2].Value.ToString() == txtMaCuonSach.Text.ToString())
+                    if (row.Index<=(dataPhieuMuonTra.RowCount-2) && row.Cells[1].Value.ToString() == txtMaCuonSach.Text.ToString())
                     {
                         MessageBox.Show("Cuốn sách này đã được mượn!");
                         flag = 1;
@@ -74,7 +58,7 @@ namespace QLThuVien
             {
                 foreach (DataGridViewRow row in dataPhieuMuonTra.Rows)
                 {
-                    if (row.Index <= (dataPhieuMuonTra.RowCount - 2) && row.Cells[3].Value.ToString() == txtMaDocGia.Text.ToString())
+                    if (row.Index <= (dataPhieuMuonTra.RowCount - 2) && row.Cells[2].Value.ToString() == txtMaDocGia.Text.ToString())
                     {
                         flag2++;
                         if (flag2 == 5)
@@ -82,9 +66,13 @@ namespace QLThuVien
                     }
                 }
             }
+            
+            
 
             if (flag2 == SoSachMuonMax)
-                MessageBox.Show("Độc giả đã mượn đủ " + SoSachMuonMax.ToString() + " cuốn sách");
+            {
+                MessageBox.Show("Độc giả đã mượn đủ " + SoSachMuonMax.ToString() + " cuốn sách"); 
+            }
 
             if (flag == 0 && flag2<SoSachMuonMax)
             {
@@ -102,9 +90,7 @@ namespace QLThuVien
 
                 Load_Data();
             }
-
-                
-            
+        
         }
 
         private void btnXoa_Click_1(object sender, EventArgs e)
@@ -167,9 +153,23 @@ namespace QLThuVien
             dataPhieuMuonTra.DataSource = dt;
         }
 
-        
-
-        
+        private void dataPhieuMuonTra_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = dataPhieuMuonTra.Rows[e.RowIndex];
+                txtMaMuonTra.Text = row.Cells[0].Value.ToString();
+                txtMaCuonSach.Text = row.Cells[1].Value.ToString();
+                txtMaDocGia.Text = row.Cells[2].Value.ToString();
+                datengaymuon.Text = row.Cells[3].Value.ToString();
+                datengaytra.Text = row.Cells[4].Value.ToString();
+                txtSoTienTra.Text = row.Cells[5].Value.ToString();
+                txtTienPhat.Text = row.Cells[6].Value.ToString();
+            }
+            catch (Exception)
+            { }
+        }
 
         private void dataPhieuMuonTra_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -177,13 +177,13 @@ namespace QLThuVien
             {
                 DataGridViewRow row = new DataGridViewRow();
                 row = dataPhieuMuonTra.Rows[e.RowIndex];
-                txtMaMuonTra.Text = row.Cells[1].Value.ToString();
-                txtMaCuonSach.Text = row.Cells[2].Value.ToString();
-                txtMaDocGia.Text = row.Cells[3].Value.ToString();
-                datengaymuon.Text = row.Cells[4].Value.ToString();
-                datengaytra.Text = row.Cells[5].Value.ToString();
-                txtSoTienTra.Text = row.Cells[6].Value.ToString();
-                txtTienPhat.Text = row.Cells[7].Value.ToString();
+                txtMaMuonTra.Text = row.Cells[0].Value.ToString();
+                txtMaCuonSach.Text = row.Cells[1].Value.ToString();
+                txtMaDocGia.Text = row.Cells[2].Value.ToString();
+                datengaymuon.Text = row.Cells[3].Value.ToString();
+                datengaytra.Text = row.Cells[4].Value.ToString();
+                txtSoTienTra.Text = row.Cells[5].Value.ToString();
+                txtTienPhat.Text = row.Cells[6].Value.ToString();
             }
             catch (Exception)
             { }

@@ -159,6 +159,7 @@
             this.dataPhieuThu.TabIndex = 5;
             this.dataPhieuThu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPhieuThu_CellClick);
             this.dataPhieuThu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPhieuThu_CellContentClick);
+
             // 
             // Column1
             // 
