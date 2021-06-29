@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +17,7 @@ namespace QLThuVien
         public frmDanhMucSach()
         {
             InitializeComponent();
+            txtMaSach.Enabled = false;
         }
         public void Load_Data()
         {
@@ -55,14 +57,23 @@ namespace QLThuVien
             { }
         }
 
+        public bool IsAlphabets(string inputString)
+        {
+            Regex r = new Regex("^[a-zA-Z ]+$");
+            if (r.IsMatch(inputString))
+                return true;
+            else
+                return false;
+        }
+
         private void btnMoi_Click(object sender, EventArgs e)
         {
             txtMaSach.Text = "";
             cboxMaTL.Text = "";
             txtTenSach.Text = "";
-            datenamxb.Text = "1/1/2021";
+            datenamxb.Text = "";
             txtNhaXB.Text = "";
-            datengaynhap.Text = "1/1/2021";
+            datengaynhap.Text = "";
             txtTriGia.Text = "";
             txtSoLuong.Text = "";
         }
@@ -80,8 +91,8 @@ namespace QLThuVien
                     try
                     {
                         Conn.executeQuery(xoa);
-                        MessageBox.Show("Xóa thành công!!");
                         Load_Data();
+                        MessageBox.Show("Xóa thành công!!");
                     }
                     catch (Exception)
                     {
@@ -96,26 +107,33 @@ namespace QLThuVien
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            if (datengaynhap.Value.Subtract(datenamxb.Value).TotalDays <= KhoangCachXB * 365)
+            if (IsAlphabets(txtTenSach.Text) == false)
+                MessageBox.Show("Tên sách " + txtTenSach.Text + " chứa kí tự không hợp lệ");
+            else if (IsAlphabets(txtNhaXB.Text) == false)
+                MessageBox.Show("Tên nhà xuất bản " + txtNhaXB.Text + " chứa kí tự không hợp lệ");
+            else if (datengaynhap.Value.Subtract(datenamxb.Value).TotalDays <= KhoangCachXB * 365)
             {
                 string capnhat = @"update Sach set TenSach=N'" + txtTenSach.Text + "',MaTheLoai='" + cboxMaTL.Text + "',NamXuatBan='" + datenamxb.Text + "',NhaXuatBan=N'" + txtNhaXB.Text + "',NgayNhap='" + datengaynhap.Text + "',TriGia='" + txtTriGia.Text + "',SoLuong='" + txtSoLuong.Text + "' where MaSach='" + txtMaSach.Text + "'";
                 Conn.executeQuery(capnhat);
-                MessageBox.Show("Cập nhật thành công!!");
                 Load_Data();
+                MessageBox.Show("Cập nhật thành công!!");
             }
             else
                 MessageBox.Show("Khoảng cách năm xuất bản lớn hơn quy định. Khoảng cách phải nhỏ hơn " + KhoangCachXB.ToString() + " năm");
         }
-    
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (datengaynhap.Value.Subtract(datenamxb.Value).TotalDays <= KhoangCachXB * 365)
+            if (IsAlphabets(txtTenSach.Text) == false)
+                MessageBox.Show("Tên sách " + txtTenSach.Text + " chứa kí tự không hợp lệ");
+            else if (IsAlphabets(txtNhaXB.Text) == false)
+                MessageBox.Show("Tên nhà xuất bản " + txtNhaXB.Text + " chứa kí tự không hợp lệ");
+            else if (datengaynhap.Value.Subtract(datenamxb.Value).TotalDays <= KhoangCachXB * 365)
             {
                 string them = @"insert into Sach values (N'" + txtTenSach.Text + "','" + cboxMaTL.Text + "','" + datenamxb.Text + "',N'" + txtNhaXB.Text + "','" + datengaynhap.Text + "','" + txtTriGia.Text + "','" + txtSoLuong.Text + "')";
                 Conn.executeQuery(them);
-                MessageBox.Show("Thêm sách thành công!!");
                 Load_Data();
+                MessageBox.Show("Thêm sách thành công!!");
             }
             else
                 MessageBox.Show("Khoảng cách năm xuất bản lớn hơn quy định. Khoảng cách phải nhỏ hơn " + KhoangCachXB.ToString() + " năm");

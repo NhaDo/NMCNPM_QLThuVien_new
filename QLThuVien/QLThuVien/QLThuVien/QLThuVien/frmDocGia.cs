@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using QLThuVien;
 
-
 namespace QLThuVien
 {
     public partial class frmDocGia : Form
@@ -26,6 +25,7 @@ namespace QLThuVien
 
             this.datehethan.Enabled = false;
             this.datehethan.Value = datelapthe.Value.AddMonths(ThoiHanSuDungThe);
+            txtMaDG.Enabled = false;
         }
 
 
@@ -61,11 +61,22 @@ namespace QLThuVien
             { }
         }
 
+        public bool IsAlphabets(string inputString)
+        {
+            Regex r = new Regex("^[a-zA-Z ]+$");
+            if (r.IsMatch(inputString))
+                return true;
+            else
+                return false;
+        }
+
+
         private void btnMoi_Click(object sender, EventArgs e)
         {
 
             txtMaDG.Text = "";
             txtHoTen.Text = "";
+            dateNgaySinh.Text = "";
             dateNgaySinh.Text = DateTime.Now.ToString("dd/mm/yyyy");
             datelapthe.Text = DateTime.Now.ToString("dd/mm/yyyy");
             datehethan.Text = DateTime.Now.AddMonths(ThoiHanSuDungThe).ToString("dd/mm/yyyy");
@@ -82,13 +93,14 @@ namespace QLThuVien
                 MessageBox.Show("Mã độc giả không được trống!!");
             else
             {
-                DialogResult dialog = MessageBox.Show("Bạn có muốn xóa độc giả:" + txtMaDG.Text, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialog = MessageBox.Show("Bạn có muốn xóa độc giả: " + txtMaDG.Text, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
                     try
                     {
                         Conn.executeQuery(xoa);
                         Load_Data();
+                        MessageBox.Show("Xóa độc giả thành công!!");
                     }
                     catch (Exception)
                     {
@@ -109,7 +121,11 @@ namespace QLThuVien
                 MessageBox.Show("Loại độc giả " + txtLoaiDocGia.Text + " không tồn tại");
             else if (IsAlphabets(txtHoTen.Text) == false)
                 MessageBox.Show("Tên độc giả " + txtHoTen.Text + " chứa kí tự không hợp lệ");
-            else if (DateTime.Now.Subtract(dateNgaySinh.Value).TotalDays< TuoiToiThieu*365)
+            else if (txtDiaChi.Text == "")
+                MessageBox.Show("Xin vui lòng nhập địa chỉ");
+            else if (txtEmail.Text == "")
+                MessageBox.Show("Xin vui lòng nhập email hợp lệ");
+            else if (DateTime.Now.Subtract(dateNgaySinh.Value).TotalDays < TuoiToiThieu*365)
                 MessageBox.Show("Tuổi độc giả " + txtHoTen.Text + " phải lớn hơn " + TuoiToiThieu.ToString());
             else if (DateTime.Now.Subtract(dateNgaySinh.Value).TotalDays > TuoiToiDa*365)
                 MessageBox.Show("Tuổi độc giả " + txtHoTen.Text + " phải nhỏ hơn " + TuoiToiDa.ToString());
@@ -127,17 +143,11 @@ namespace QLThuVien
                                             "','" + txtTongNo.Text + "')";
                 Conn.executeQuery(them);
                 Load_Data();
+                MessageBox.Show("Thêm độc giả thành công!");
             }
         }
 
-        public bool IsAlphabets(string inputString)
-        {
-            Regex r = new Regex("^[a-zA-Z ]+$");
-            if (r.IsMatch(inputString))
-                return true;
-            else
-                return false;
-        }
+
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             //if (txtMaDG.Text == "")
@@ -147,6 +157,14 @@ namespace QLThuVien
                 MessageBox.Show("Loại độc giả " + txtLoaiDocGia.Text + " không tồn tại");
             else if (IsAlphabets(txtHoTen.Text) == false)
                 MessageBox.Show("Tên độc giả " + txtHoTen.Text + " chứa kí tự không hợp lệ");
+            else if (txtDiaChi.Text == "")
+                MessageBox.Show("Xin vui lòng nhập địa chỉ");
+            else if (txtEmail.Text == "")
+                MessageBox.Show("Xin vui lòng nhập email hợp lệ");
+            else if (DateTime.Now.Subtract(dateNgaySinh.Value).TotalDays < TuoiToiThieu * 365)
+                MessageBox.Show("Tuổi độc giả " + txtHoTen.Text + " phải lớn hơn " + TuoiToiThieu.ToString());
+            else if (DateTime.Now.Subtract(dateNgaySinh.Value).TotalDays > TuoiToiDa * 365)
+                MessageBox.Show("Tuổi độc giả " + txtHoTen.Text + " phải nhỏ hơn " + TuoiToiDa.ToString());
             else
             {
                 string capnhat = @"update DOCGIA set 
@@ -158,6 +176,7 @@ namespace QLThuVien
                                 "' WHERE MaDocGia='" + txtMaDG.Text + "'";
                 Conn.executeQuery(capnhat);
                 Load_Data();
+                MessageBox.Show("Cập nhật độc giả thành công!");
             }
         }
 

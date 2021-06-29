@@ -16,6 +16,7 @@ namespace QLThuVien
         public frmPhieuThu()
         {
             InitializeComponent();
+            txtMaPhieuThu.Enabled = false;
         }
         public void Load_Data()
         {
@@ -69,10 +70,10 @@ namespace QLThuVien
 
         private void btnMoi_Click(object sender, EventArgs e)
         {
-            txtMaPhieuThu.Text = "";
-            txtMaDocGia.Text = "";
-            txtSoTienThu.Text = "";
-            txtConLai.Text = "";
+            txtMaPhieuThu.ResetText();
+            txtMaDocGia.ResetText();
+            txtSoTienThu.ResetText();
+            txtConLai.ResetText();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -88,8 +89,8 @@ namespace QLThuVien
                     try
                     {
                         Conn.executeQuery(xoa);
-                        MessageBox.Show("Xóa thành công!!");
                         Load_Data();
+                        MessageBox.Show("Xóa thành công!!");
                     }
                     catch (Exception)
                     {
@@ -106,16 +107,16 @@ namespace QLThuVien
         {
             string capnhat = @"update PhieuThu set MaDocGia='" + txtMaDocGia.Text + "',SoTienThu='" + txtSoTienThu.Text + "',ConLai='" + txtConLai.Text + "' where MaPhieuThu='" + txtMaPhieuThu.Text + "'";
             Conn.executeQuery(capnhat);
-            MessageBox.Show("Cập nhật thành công!!");
             Load_Data();
+            MessageBox.Show("Cập nhật phiếu thu thành công!!");
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             string them = @"insert into PhieuThu values ('" + txtMaDocGia.Text + "','" + txtSoTienThu.Text + "','" + txtConLai.Text + "')";
             Conn.executeQuery(them);
-            MessageBox.Show("Thêm sách thành công!!");
             Load_Data();
+            MessageBox.Show("Thêm phiếu thu thành công!!");
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)

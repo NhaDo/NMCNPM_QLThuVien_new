@@ -83,10 +83,11 @@
             // dateNgaySinh
             // 
             this.dateNgaySinh.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.dateNgaySinh.CustomFormat = "";
             this.dateNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateNgaySinh.Location = new System.Drawing.Point(693, 37);
             this.dateNgaySinh.Name = "dateNgaySinh";
-            this.dateNgaySinh.Size = new System.Drawing.Size(295, 35);
+            this.dateNgaySinh.Size = new System.Drawing.Size(295, 26);
             this.dateNgaySinh.TabIndex = 3;
             this.dateNgaySinh.UseWaitCursor = true;
             // 
@@ -95,7 +96,7 @@
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.txtEmail.Location = new System.Drawing.Point(693, 135);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(295, 35);
+            this.txtEmail.Size = new System.Drawing.Size(295, 26);
             this.txtEmail.TabIndex = 1;
             this.txtEmail.UseWaitCursor = true;
             // 
@@ -104,7 +105,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(557, 137);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 29);
+            this.label6.Size = new System.Drawing.Size(48, 20);
             this.label6.TabIndex = 0;
             this.label6.Text = "Email";
             this.label6.UseWaitCursor = true;
@@ -114,7 +115,7 @@
             this.txtDiaChi.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.txtDiaChi.Location = new System.Drawing.Point(693, 86);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(295, 35);
+            this.txtDiaChi.Size = new System.Drawing.Size(295, 26);
             this.txtDiaChi.TabIndex = 1;
             this.txtDiaChi.UseWaitCursor = true;
             // 
@@ -123,7 +124,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(557, 88);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 29);
+            this.label5.Size = new System.Drawing.Size(60, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "Địa Chỉ";
             this.label5.UseWaitCursor = true;
@@ -133,7 +134,7 @@
             this.txtHoTen.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.txtHoTen.Location = new System.Drawing.Point(183, 88);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(295, 35);
+            this.txtHoTen.Size = new System.Drawing.Size(295, 26);
             this.txtHoTen.TabIndex = 1;
             this.txtHoTen.UseWaitCursor = true;
             // 
@@ -142,7 +143,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(39, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 29);
+            this.label2.Size = new System.Drawing.Size(61, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Họ Tên";
             this.label2.UseWaitCursor = true;
@@ -152,7 +153,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(557, 42);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 29);
+            this.label4.Size = new System.Drawing.Size(81, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Ngày Sinh";
             this.label4.UseWaitCursor = true;
@@ -267,7 +268,7 @@
             this.txtMaDG.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.txtMaDG.Location = new System.Drawing.Point(183, 39);
             this.txtMaDG.Name = "txtMaDG";
-            this.txtMaDG.Size = new System.Drawing.Size(295, 35);
+            this.txtMaDG.Size = new System.Drawing.Size(295, 26);
             this.txtMaDG.TabIndex = 1;
             this.txtMaDG.UseWaitCursor = true;
             // 
@@ -276,7 +277,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(39, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 29);
+            this.label1.Size = new System.Drawing.Size(93, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Độc Giả";
             this.label1.UseWaitCursor = true;
@@ -379,7 +380,7 @@
             this.txtLoaiDocGia.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.txtLoaiDocGia.Location = new System.Drawing.Point(693, 191);
             this.txtLoaiDocGia.Name = "txtLoaiDocGia";
-            this.txtLoaiDocGia.Size = new System.Drawing.Size(295, 35);
+            this.txtLoaiDocGia.Size = new System.Drawing.Size(295, 26);
             this.txtLoaiDocGia.TabIndex = 10;
             this.txtLoaiDocGia.UseWaitCursor = true;
             // 
@@ -388,7 +389,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(557, 191);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(151, 29);
+            this.label11.Size = new System.Drawing.Size(101, 20);
             this.label11.TabIndex = 9;
             this.label11.Text = "Loại Độc Giả";
             this.label11.UseWaitCursor = true;
@@ -398,7 +399,7 @@
             this.txtTongNo.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.txtTongNo.Location = new System.Drawing.Point(409, 233);
             this.txtTongNo.Name = "txtTongNo";
-            this.txtTongNo.Size = new System.Drawing.Size(295, 35);
+            this.txtTongNo.Size = new System.Drawing.Size(295, 26);
             this.txtTongNo.TabIndex = 8;
             this.txtTongNo.UseWaitCursor = true;
             // 
@@ -407,7 +408,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(40, 186);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(161, 29);
+            this.label9.Size = new System.Drawing.Size(109, 20);
             this.label9.TabIndex = 7;
             this.label9.Text = "Ngày Hết Hạn";
             this.label9.UseWaitCursor = true;
@@ -417,7 +418,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(40, 138);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(164, 29);
+            this.label8.Size = new System.Drawing.Size(107, 20);
             this.label8.TabIndex = 6;
             this.label8.Text = "Ngày Lập Thẻ";
             this.label8.UseWaitCursor = true;
@@ -425,10 +426,11 @@
             // datehethan
             // 
             this.datehethan.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.datehethan.CustomFormat = "";
             this.datehethan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datehethan.Location = new System.Drawing.Point(183, 186);
             this.datehethan.Name = "datehethan";
-            this.datehethan.Size = new System.Drawing.Size(295, 35);
+            this.datehethan.Size = new System.Drawing.Size(295, 26);
             this.datehethan.TabIndex = 5;
             this.datehethan.UseWaitCursor = true;
             this.datehethan.ValueChanged += new System.EventHandler(this.datehethan_ValueChanged);
@@ -436,12 +438,14 @@
             // datelapthe
             // 
             this.datelapthe.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.datelapthe.CustomFormat = "";
             this.datelapthe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datelapthe.Location = new System.Drawing.Point(183, 137);
             this.datelapthe.Name = "datelapthe";
-            this.datelapthe.Size = new System.Drawing.Size(295, 35);
+            this.datelapthe.Size = new System.Drawing.Size(295, 26);
             this.datelapthe.TabIndex = 4;
             this.datelapthe.UseWaitCursor = true;
+            this.datelapthe.Value = new System.DateTime(2021, 6, 29, 6, 1, 27, 0);
             this.datelapthe.ValueChanged += new System.EventHandler(this.datelapthe_ValueChanged);
             // 
             // label7
@@ -449,7 +453,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(318, 233);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 29);
+            this.label7.Size = new System.Drawing.Size(67, 20);
             this.label7.TabIndex = 0;
             this.label7.Text = "Tổng nợ";
             this.label7.UseWaitCursor = true;
@@ -460,14 +464,14 @@
             this.label10.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(467, 409);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(233, 32);
+            this.label10.Size = new System.Drawing.Size(160, 22);
             this.label10.TabIndex = 5;
             this.label10.Text = "Danh sách độc giả";
             this.label10.UseWaitCursor = true;
             // 
             // frmDocGia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1051, 721);
             this.Controls.Add(this.label10);
@@ -514,7 +518,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker datehethan;
-        private System.Windows.Forms.DateTimePicker datelapthe;
         private System.Windows.Forms.TextBox txtTongNo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -528,5 +531,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.TextBox txtLoaiDocGia;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker datelapthe;
     }
 }

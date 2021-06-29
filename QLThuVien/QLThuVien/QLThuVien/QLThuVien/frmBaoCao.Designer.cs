@@ -33,11 +33,11 @@ namespace QLThuVien
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.nudNam = new System.Windows.Forms.NumericUpDown();
-            this.nudThang = new System.Windows.Forms.NumericUpDown();
-            this.dataTraCuu = new System.Windows.Forms.DataGridView();
             this.btnSave = new System.Windows.Forms.Button();
+            this.nudThang = new System.Windows.Forms.NumericUpDown();
+            this.nudNam = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dataTraCuu = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,8 +45,8 @@ namespace QLThuVien
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudThang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTraCuu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,53 +60,29 @@ namespace QLThuVien
             this.panel1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(9, 10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(779, 94);
+            this.panel1.Size = new System.Drawing.Size(584, 76);
             this.panel1.TabIndex = 6;
             this.panel1.UseWaitCursor = true;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label4
+            // btnSave
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(214, 45);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 23);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Tháng";
-            this.label4.UseWaitCursor = true;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // nudNam
-            // 
-            this.nudNam.Location = new System.Drawing.Point(344, 43);
-            this.nudNam.Margin = new System.Windows.Forms.Padding(4);
-            this.nudNam.Maximum = new decimal(new int[] {
-            1980,
-            0,
-            0,
-            0});
-            this.nudNam.Minimum = new decimal(new int[] {
-            1980,
-            0,
-            0,
-            0});
-            this.nudNam.Name = "nudNam";
-            this.nudNam.Size = new System.Drawing.Size(131, 30);
-            this.nudNam.TabIndex = 8;
-            this.nudNam.Value = new decimal(new int[] {
-            1980,
-            0,
-            0,
-            0});
-            this.nudNam.ValueChanged += new System.EventHandler(this.nudNam_ValueChanged);
+            this.btnSave.Location = new System.Drawing.Point(462, 28);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(86, 37);
+            this.btnSave.TabIndex = 10;
+            this.btnSave.Text = "Xuất file";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseWaitCursor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // nudThang
             // 
-            this.nudThang.Location = new System.Drawing.Point(284, 43);
-            this.nudThang.Margin = new System.Windows.Forms.Padding(4);
+            this.nudThang.Location = new System.Drawing.Point(213, 35);
             this.nudThang.Maximum = new decimal(new int[] {
             12,
             0,
@@ -118,14 +94,52 @@ namespace QLThuVien
             0,
             0});
             this.nudThang.Name = "nudThang";
-            this.nudThang.Size = new System.Drawing.Size(52, 30);
+            this.nudThang.Size = new System.Drawing.Size(39, 26);
             this.nudThang.TabIndex = 9;
+            this.nudThang.UseWaitCursor = true;
             this.nudThang.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nudThang.ValueChanged += new System.EventHandler(this.nudThang_ValueChanged);
+            // 
+            // nudNam
+            // 
+            this.nudNam.Location = new System.Drawing.Point(258, 35);
+            this.nudNam.Maximum = new decimal(new int[] {
+            1980,
+            0,
+            0,
+            0});
+            this.nudNam.Minimum = new decimal(new int[] {
+            1980,
+            0,
+            0,
+            0});
+            this.nudNam.Name = "nudNam";
+            this.nudNam.Size = new System.Drawing.Size(98, 26);
+            this.nudNam.TabIndex = 8;
+            this.nudNam.UseWaitCursor = true;
+            this.nudNam.Value = new decimal(new int[] {
+            1980,
+            0,
+            0,
+            0});
+            this.nudNam.ValueChanged += new System.EventHandler(this.nudNam_ValueChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(160, 37);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 19);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Tháng";
+            this.label4.UseWaitCursor = true;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // dataTraCuu
             // 
@@ -153,7 +167,8 @@ namespace QLThuVien
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataTraCuu.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataTraCuu.Location = new System.Drawing.Point(12, 154);
+            this.dataTraCuu.Location = new System.Drawing.Point(9, 135);
+            this.dataTraCuu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataTraCuu.Name = "dataTraCuu";
             this.dataTraCuu.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -166,19 +181,9 @@ namespace QLThuVien
             this.dataTraCuu.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataTraCuu.RowHeadersWidth = 51;
             this.dataTraCuu.RowTemplate.Height = 24;
-            this.dataTraCuu.Size = new System.Drawing.Size(779, 294);
+            this.dataTraCuu.Size = new System.Drawing.Size(584, 239);
             this.dataTraCuu.TabIndex = 7;
             this.dataTraCuu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTraCuu_CellContentClick);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(616, 34);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(114, 45);
-            this.btnSave.TabIndex = 10;
-            this.btnSave.Text = "Xuất file";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Column1
             // 
@@ -228,28 +233,30 @@ namespace QLThuVien
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(317, 125);
+            this.label10.Location = new System.Drawing.Point(238, 102);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(212, 26);
+            this.label10.Size = new System.Drawing.Size(172, 22);
             this.label10.TabIndex = 8;
             this.label10.Text = "Danh sách thống kê";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // frmBaoCao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 450);
+            this.ClientSize = new System.Drawing.Size(591, 366);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dataTraCuu);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmBaoCao";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmBaoCao_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudThang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTraCuu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
