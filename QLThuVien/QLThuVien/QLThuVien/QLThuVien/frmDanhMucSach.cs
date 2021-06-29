@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -55,6 +56,15 @@ namespace QLThuVien
             { }
         }
 
+        public bool IsAlphabets(string inputString)
+        {
+            Regex r = new Regex("^[a-zA-Z0-9 ]+$");
+            if (r.IsMatch(inputString))
+                return true;
+            else
+                return false;
+        }
+
         private void btnMoi_Click(object sender, EventArgs e)
         {
             txtMaSach.Text = "";
@@ -100,17 +110,28 @@ namespace QLThuVien
         {
             if (datengaynhap.Value.Subtract(datenamxb.Value).TotalDays <= KhoangCachXB * 365)
             {
-                string capnhat = @"update Sach set TenSach=N'" + txtTenSach.Text.ToString() 
-                                + "',MaTheLoai='" + cboxMaTL.Text.ToString() 
-                                + "',NamXuatBan='" + datenamxb.Text.ToString() 
-                                + "',NhaXuatBan=N'" + txtNhaXB.Text.ToString() 
-                                + "',NgayNhap='" + datengaynhap.Text.ToString() 
-                                + "',TriGia='" + txtTriGia.Text.ToString() 
-                                + "',SoLuong='" + txtSoLuong.Text.ToString() 
+                if (IsAlphabets(txtTenSach.Text) == false)
+                    MessageBox.Show("Tên sách " + txtTenSach.Text + " chứa kí tự không hợp lệ");
+                else if (IsAlphabets(txtNhaXB.Text) == false)
+                    MessageBox.Show("Tên nhà xuất bản " + txtNhaXB.Text + " chứa kí tự không hợp lệ");
+                else if (txtTriGia.Text == "0")
+                    MessageBox.Show("Xin vui lòng nhập giá trị hợp lệ");
+                else if (txtSoLuong.Text == "0")
+                    MessageBox.Show("Xin vui lòng nhập số lượng hợp lệ");
+                else
+                {
+                    string capnhat = @"update Sach set TenSach=N'" + txtTenSach.Text.ToString()
+                                + "',MaTheLoai='" + cboxMaTL.Text.ToString()
+                                + "',NamXuatBan='" + datenamxb.Text.ToString()
+                                + "',NhaXuatBan=N'" + txtNhaXB.Text.ToString()
+                                + "',NgayNhap='" + datengaynhap.Text.ToString()
+                                + "',TriGia='" + txtTriGia.Text.ToString()
+                                + "',SoLuong='" + txtSoLuong.Text.ToString()
                                 + "' where MaSach='" + txtMaSach.Text.ToString() + "'";
-                Conn.executeQuery(capnhat);
-                MessageBox.Show("Cập nhật thành công!!");
-                Load_Data();
+                    Conn.executeQuery(capnhat);
+                    MessageBox.Show("Cập nhật thành công!!");
+                    Load_Data();
+                }
             }
             else
                 MessageBox.Show("Khoảng cách năm xuất bản lớn hơn quy định. Khoảng cách phải nhỏ hơn " + KhoangCachXB.ToString() + " năm");
@@ -121,20 +142,31 @@ namespace QLThuVien
         {
             if (datengaynhap.Value.Subtract(datenamxb.Value).TotalDays <= KhoangCachXB * 365)
             {
-                string them = @"insert into Sach values (N'" + txtTenSach.Text + "','" + cboxMaTL.Text + "','" + datenamxb.Text + "',N'" + txtNhaXB.Text + "','" + datengaynhap.Text + "','" + txtTriGia.Text + "','" + txtSoLuong.Text + "')";
-                Conn.executeQuery(them);
-                Load_Data();
-                int z = dataSach.Rows.Count-2;
-                txtMaSach.Text = dataSach.Rows[z].Cells[0].Value.ToString();
-
-                string them2 = @"insert into CUONSACH(MaSach,TinhTrang) values ('" + txtMaSach.Text.ToString() + "',N'có sẵn')";
-                for (int i = 0; i < Convert.ToInt32(txtSoLuong.Text.ToString()); i++)
+                if (IsAlphabets(txtTenSach.Text) == false)
+                    MessageBox.Show("Tên sách " + txtTenSach.Text + " chứa kí tự không hợp lệ");
+                else if (IsAlphabets(txtNhaXB.Text) == false)
+                    MessageBox.Show("Tên nhà xuất bản " + txtNhaXB.Text + " chứa kí tự không hợp lệ");
+                else if (txtTriGia.Text == "0")
+                    MessageBox.Show("Xin vui lòng nhập trị giá hợp lệ");
+                else if (txtSoLuong.Text == "0")
+                    MessageBox.Show("Xin vui lòng nhập số lượng hợp lệ");
+                else
                 {
-                    Conn.executeQuery(them2);
-                    //MessageBox.Show("Thêm cuốn sách thànhcông!!");
+                    string them = @"insert into Sach values (N'" + txtTenSach.Text + "','" + cboxMaTL.Text + "','" + datenamxb.Text + "',N'" + txtNhaXB.Text + "','" + datengaynhap.Text + "','" + txtTriGia.Text + "','" + txtSoLuong.Text + "')";
+                    Conn.executeQuery(them);
+                    Load_Data();
+                    int z = dataSach.Rows.Count - 2;
+                    txtMaSach.Text = dataSach.Rows[z].Cells[0].Value.ToString();
+
+                    string them2 = @"insert into CUONSACH(MaSach,TinhTrang) values ('" + txtMaSach.Text.ToString() + "',N'có sẵn')";
+                    for (int i = 0; i < Convert.ToInt32(txtSoLuong.Text.ToString()); i++)
+                    {
+                        Conn.executeQuery(them2);
+                        //MessageBox.Show("Thêm cuốn sách thànhcông!!");
+                    }
+                    MessageBox.Show("Thêm thành công!!");
+                    Load_Data();
                 }
-                MessageBox.Show("Thêm sách thành công!!");
-                Load_Data();
             }
             else
                 MessageBox.Show("Khoảng cách năm xuất bản lớn hơn quy định. Khoảng cách phải nhỏ hơn " + KhoangCachXB.ToString() + " năm");

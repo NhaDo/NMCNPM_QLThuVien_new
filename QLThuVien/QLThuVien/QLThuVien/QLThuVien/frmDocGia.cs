@@ -88,6 +88,7 @@ namespace QLThuVien
                     try
                     {
                         Conn.executeQuery(xoa);
+                        MessageBox.Show("Xóa thành công!!");
                         Load_Data();
                     }
                     catch (Exception)
@@ -108,6 +109,10 @@ namespace QLThuVien
                 MessageBox.Show("Loại độc giả " + txtLoaiDocGia.Text + " không tồn tại");
             else if (IsAlphabets(txtHoTen.Text) == false)
                 MessageBox.Show("Tên độc giả " + txtHoTen.Text + " chứa kí tự không hợp lệ");
+            else if (txtDiaChi.Text == "")
+                MessageBox.Show("Xin vui lòng nhập địa chỉ!");
+            else if (txtEmail.Text == "")
+                MessageBox.Show("Xin vui lòng nhập email!");
             else if (DateTime.Now.Subtract(dateNgaySinh.Value).TotalDays< TuoiToiThieu*365)
                 MessageBox.Show("Tuổi độc giả " + txtHoTen.Text + " phải lớn hơn " + TuoiToiThieu.ToString());
             else if (DateTime.Now.Subtract(dateNgaySinh.Value).TotalDays > TuoiToiDa*365)
@@ -125,6 +130,7 @@ namespace QLThuVien
                                             "','" + datehethan.Text +
                                             "','" + txtTongNo.Text + "')";
                 Conn.executeQuery(them);
+                MessageBox.Show("Thêm thành công!!");
                 Load_Data();
             }
         }
@@ -146,6 +152,14 @@ namespace QLThuVien
                 MessageBox.Show("Loại độc giả " + txtLoaiDocGia.Text + " không tồn tại");
             else if (IsAlphabets(txtHoTen.Text) == false)
                 MessageBox.Show("Tên độc giả " + txtHoTen.Text + " chứa kí tự không hợp lệ");
+            else if (txtDiaChi.Text == "")
+                MessageBox.Show("Xin vui lòng nhập địa chỉ!");
+            else if (txtEmail.Text == "")
+                MessageBox.Show("Xin vui lòng nhập email!");
+            else if (DateTime.Now.Subtract(dateNgaySinh.Value).TotalDays < TuoiToiThieu * 365)
+                MessageBox.Show("Tuổi độc giả " + txtHoTen.Text + " phải lớn hơn " + TuoiToiThieu.ToString());
+            else if (DateTime.Now.Subtract(dateNgaySinh.Value).TotalDays > TuoiToiDa * 365)
+                MessageBox.Show("Tuổi độc giả " + txtHoTen.Text + " phải nhỏ hơn " + TuoiToiDa.ToString());
             else
             {
                 string capnhat = @"update DOCGIA set 
@@ -156,6 +170,7 @@ namespace QLThuVien
                                 "',Email='" + txtEmail.Text +
                                 "' WHERE MaDocGia='" + txtMaDG.Text + "'";
                 Conn.executeQuery(capnhat);
+                MessageBox.Show("Cập nhật thành công!!");
                 Load_Data();
             }
         }
