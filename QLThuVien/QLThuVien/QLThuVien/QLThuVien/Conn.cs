@@ -35,7 +35,7 @@ namespace QLThuVien
             }
             catch(SqlException Ex)
             {
-
+                MessageBox.Show("Lỗi không kết nối được với CSDL");
             }
         }
 
@@ -53,7 +53,7 @@ namespace QLThuVien
             }
             catch(SqlException Ex)
             {
-
+                MessageBox.Show("Lỗi thêm dữ liệu vào csdl");
             }
 
 

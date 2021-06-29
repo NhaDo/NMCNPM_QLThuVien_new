@@ -69,7 +69,9 @@ namespace QLThuVien
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string xoa = @"delete from CTTACGIA where MaSach='" + txtMaSach.Text + "';delete from CuonSach where MaSach='" + txtMaSach.Text + "';delete from Sach where MaSach='" + txtMaSach.Text + "'"; ;
+            
+            string xoa = @"delete from CTTACGIA where MaSach='" + txtMaSach.Text.ToString() + "';delete from CuonSach where MaSach='" + txtMaSach.Text.ToString() + "';delete from Sach where MaSach='" + txtMaSach.Text.ToString() + "'"; ;
+
             if (txtMaSach.Text == "")
                 MessageBox.Show("Mã sách không được trống!!");
             else
@@ -98,7 +100,14 @@ namespace QLThuVien
         {
             if (datengaynhap.Value.Subtract(datenamxb.Value).TotalDays <= KhoangCachXB * 365)
             {
-                string capnhat = @"update Sach set TenSach=N'" + txtTenSach.Text + "',MaTheLoai='" + cboxMaTL.Text + "',NamXuatBan='" + datenamxb.Text + "',NhaXuatBan=N'" + txtNhaXB.Text + "',NgayNhap='" + datengaynhap.Text + "',TriGia='" + txtTriGia.Text + "',SoLuong='" + txtSoLuong.Text + "' where MaSach='" + txtMaSach.Text + "'";
+                string capnhat = @"update Sach set TenSach=N'" + txtTenSach.Text.ToString() 
+                                + "',MaTheLoai='" + cboxMaTL.Text.ToString() 
+                                + "',NamXuatBan='" + datenamxb.Text.ToString() 
+                                + "',NhaXuatBan=N'" + txtNhaXB.Text.ToString() 
+                                + "',NgayNhap='" + datengaynhap.Text.ToString() 
+                                + "',TriGia='" + txtTriGia.Text.ToString() 
+                                + "',SoLuong='" + txtSoLuong.Text.ToString() 
+                                + "' where MaSach='" + txtMaSach.Text.ToString() + "'";
                 Conn.executeQuery(capnhat);
                 MessageBox.Show("Cập nhật thành công!!");
                 Load_Data();
@@ -117,10 +126,12 @@ namespace QLThuVien
                 Load_Data();
                 int z = dataSach.Rows.Count-2;
                 txtMaSach.Text = dataSach.Rows[z].Cells[0].Value.ToString();
-                for (int i = 0; i < Convert.ToInt32(txtSoLuong.Text); i++)
+
+                string them2 = @"insert into CUONSACH(MaSach,TinhTrang) values ('" + txtMaSach.Text.ToString() + "',N'có sẵn')";
+                for (int i = 0; i < Convert.ToInt32(txtSoLuong.Text.ToString()); i++)
                 {
-                    string them2 = @"insert into CUONSACH values ('" + txtMaSach.Text + "',N'có sẵn')'";
                     Conn.executeQuery(them2);
+                    //MessageBox.Show("Thêm cuốn sách thànhcông!!");
                 }
                 MessageBox.Show("Thêm sách thành công!!");
                 Load_Data();
