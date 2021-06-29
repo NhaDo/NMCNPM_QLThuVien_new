@@ -18,7 +18,25 @@ namespace QLThuVien
 
         public int TienPhatMotNgay { get; set; }
 
-
+        public int SoQuyenSachTraTre(string MaDocGia)
+        {
+            int soquyen = 0;
+            if (dataPhieuMuonTra.Rows.Count > 1)
+            {
+                foreach (DataGridViewRow row in dataPhieuMuonTra.Rows)
+                {
+                    if (row.Index <= (dataPhieuMuonTra.RowCount - 2) 
+                        && row.Cells[2].Value.ToString() == MaDocGia)
+                    {
+                        DateTime dates1 = Convert.ToDateTime(row.Cells[3].Value.ToString());
+                        TimeSpan time = DateTime.Now.Subtract(dates1);
+                        if (time.Days > SoNgayMuonMax)
+                            soquyen++;
+                    }
+                }
+            }
+            return soquyen;
+        }
         public frmPhieuMuonTra()
         {
             InitializeComponent();
@@ -34,7 +52,7 @@ namespace QLThuVien
             dataSach.DataSource = dt2;
         }
 
-        private void dataPhieuMuonTra_Load(object sender, EventArgs e)
+        public void dataPhieuMuonTra_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             Load_Data();

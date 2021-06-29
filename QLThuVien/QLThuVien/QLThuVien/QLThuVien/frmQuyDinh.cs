@@ -98,7 +98,7 @@ namespace QLThuVien
             {
                 DataGridViewRow row = new DataGridViewRow();
                 row = dataQuyDinh.Rows[i];
-                thamso[i] = Int32.Parse(row.Cells[0].Value.ToString());
+                thamso[i] = Int32.Parse(row.Cells[2].Value.ToString());
             }
 
         }

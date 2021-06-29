@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
+
 
 namespace QLThuVien
 {
     public partial class frmPhieuThu : Form
     {
+        public int SoNgayMuonMax { get; set; }
+        public int TienPhatMotNgay { get; set; }
         public frmPhieuThu()
         {
             InitializeComponent();
@@ -24,12 +28,23 @@ namespace QLThuVien
             dataPhieuThu.DataSource = dt;
         }
 
+        public void Load_MaDocGia()
+        {
+            string n = DateTime.Now.ToString("dd/MM/yyyy");
+            string sqlcboxSup = "select * from DOCGIA, PHIEUMUONTRA " +
+                                "where DOCGIA.MaDocGia = PHIEUMUONTRA.MaDocGia" +
+                                " and DATEDIFF(day, PHIEUMUONTRA.NgayMuon, getdate())>'"
+                                + SoNgayMuonMax.ToString() + "'";
+            txtMaDocGia.DisplayMember = "MaDocGia";
+            txtMaDocGia.DataSource = Conn.getDataTable(sqlcboxSup);
+        }
 
 
         private void frmTraSach_Load_1(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             Load_Data();
+            Load_MaDocGia();
         }
 
         
@@ -135,6 +150,38 @@ namespace QLThuVien
             }
             catch (Exception)
             { }
+        }
+
+        private void txtMaDocGia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int TongNo = 0;
+
+            frmPhieuMuonTra MuonTra = new frmPhieuMuonTra();
+            MuonTra.Visible = false;
+            MuonTra.SendToBack();
+            MuonTra.Show();
+            MuonTra.Hide();
+            
+            int SoSach = MuonTra.SoQuyenSachTraTre(txtMaDocGia.Text.ToString());
+
+            TongNo += SoSach * TienPhatMotNgay;
+            txtTongNo.Text = TongNo.ToString();
+        }
+        public bool IsAlphabets(string inputString)
+        {
+            Regex r = new Regex("^[a-zA-Z ]+$");
+            if (r.IsMatch(inputString))
+                return true;
+            else
+                return false;
+        }
+
+        private void txtSoTienThu_TextChanged(object sender, EventArgs e)
+        {
+            if (!IsAlphabets(txtSoTienThu.Text) && txtSoTienThu.Text!="")
+                txtConLai.Text = Convert.ToString(Convert.ToInt32(txtTongNo.Text) - Convert.ToInt32(txtSoTienThu.Text));
+            else
+                MessageBox.Show("chỉ được nhập số");
         }
     }
 }

@@ -9,10 +9,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuThu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtTongNo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtMaDocGia = new System.Windows.Forms.ComboBox();
             this.txtConLai = new System.Windows.Forms.TextBox();
             this.txtSoTienThu = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtMaDocGia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaPhieuThu = new System.Windows.Forms.TextBox();
@@ -38,10 +40,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.txtTongNo);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.txtMaDocGia);
             this.panel1.Controls.Add(this.txtConLai);
             this.panel1.Controls.Add(this.txtSoTienThu);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtMaDocGia);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtMaPhieuThu);
@@ -53,10 +57,37 @@
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // txtTongNo
+            // 
+            this.txtTongNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTongNo.Location = new System.Drawing.Point(554, 10);
+            this.txtTongNo.Name = "txtTongNo";
+            this.txtTongNo.Size = new System.Drawing.Size(252, 35);
+            this.txtTongNo.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(434, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 26);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Tổng nợ";
+            // 
+            // txtMaDocGia
+            // 
+            this.txtMaDocGia.FormattingEnabled = true;
+            this.txtMaDocGia.Location = new System.Drawing.Point(158, 85);
+            this.txtMaDocGia.Name = "txtMaDocGia";
+            this.txtMaDocGia.Size = new System.Drawing.Size(252, 34);
+            this.txtMaDocGia.TabIndex = 7;
+            this.txtMaDocGia.SelectedIndexChanged += new System.EventHandler(this.txtMaDocGia_SelectedIndexChanged);
+            // 
             // txtConLai
             // 
             this.txtConLai.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtConLai.Location = new System.Drawing.Point(552, 83);
+            this.txtConLai.Location = new System.Drawing.Point(552, 114);
             this.txtConLai.Name = "txtConLai";
             this.txtConLai.Size = new System.Drawing.Size(252, 35);
             this.txtConLai.TabIndex = 6;
@@ -64,28 +95,21 @@
             // txtSoTienThu
             // 
             this.txtSoTienThu.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSoTienThu.Location = new System.Drawing.Point(552, 29);
+            this.txtSoTienThu.Location = new System.Drawing.Point(552, 60);
             this.txtSoTienThu.Name = "txtSoTienThu";
             this.txtSoTienThu.Size = new System.Drawing.Size(252, 35);
             this.txtSoTienThu.TabIndex = 5;
+            this.txtSoTienThu.TextChanged += new System.EventHandler(this.txtSoTienThu_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(434, 90);
+            this.label4.Location = new System.Drawing.Point(434, 121);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 26);
             this.label4.TabIndex = 0;
             this.label4.Text = "Còn Lại";
-            // 
-            // txtMaDocGia
-            // 
-            this.txtMaDocGia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaDocGia.Location = new System.Drawing.Point(158, 84);
-            this.txtMaDocGia.Name = "txtMaDocGia";
-            this.txtMaDocGia.Size = new System.Drawing.Size(252, 35);
-            this.txtMaDocGia.TabIndex = 1;
             // 
             // label3
             // 
@@ -101,7 +125,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(434, 32);
+            this.label2.Location = new System.Drawing.Point(434, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 26);
             this.label2.TabIndex = 0;
@@ -317,7 +341,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtMaDocGia;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaPhieuThu;
@@ -337,5 +360,8 @@
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox txtMaDocGia;
+        private System.Windows.Forms.TextBox txtTongNo;
+        private System.Windows.Forms.Label label5;
     } 
 }

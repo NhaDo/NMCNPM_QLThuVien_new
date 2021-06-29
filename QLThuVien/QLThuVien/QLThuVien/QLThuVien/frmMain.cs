@@ -100,7 +100,9 @@ namespace QLThuVien
 
         private void pictureBox12_Click(object sender, EventArgs e)
         {
-            Form Tra = new frmPhieuThu();
+            frmPhieuThu Tra = new frmPhieuThu();
+            Tra.SoNgayMuonMax = tham_so[5];
+            Tra.TienPhatMotNgay = tham_so[6];
             Tra.Show();
         }
 

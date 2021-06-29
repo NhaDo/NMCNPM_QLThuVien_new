@@ -66,9 +66,9 @@ namespace QLThuVien
 
             txtMaDG.Text = "";
             txtHoTen.Text = "";
-            dateNgaySinh.Text = DateTime.Now.ToString("dd/mm/yyyy");
-            datelapthe.Text = DateTime.Now.ToString("dd/mm/yyyy");
-            datehethan.Text = DateTime.Now.AddMonths(ThoiHanSuDungThe).ToString("dd/mm/yyyy");
+            dateNgaySinh.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            datelapthe.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            datehethan.Text = DateTime.Now.AddMonths(ThoiHanSuDungThe).ToString("dd/MM/yyyy");
             txtLoaiDocGia.Text = "";
             txtDiaChi.Text = "";
             txtEmail.Text = "";
