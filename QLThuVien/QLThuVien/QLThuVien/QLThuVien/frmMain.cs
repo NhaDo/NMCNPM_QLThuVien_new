@@ -118,14 +118,7 @@ namespace QLThuVien
             BC.Show();
         }
 
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-            frmTraSach Tra = new frmTraSach();
-            Tra.NgayMuonMax = tham_so[5];
-            Tra.TienPhatMotNgay = tham_so[6];
-            
-            Tra.Show();
-        }
+
 
         private void pictureBox13_Click(object sender, EventArgs e)
         {
