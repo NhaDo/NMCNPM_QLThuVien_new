@@ -32,6 +32,7 @@ namespace QLThuVien
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCao));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.nudThang = new System.Windows.Forms.NumericUpDown();
@@ -70,10 +71,16 @@ namespace QLThuVien
             // 
             // btnSave
             // 
+<<<<<<< HEAD
             this.btnSave.Location = new System.Drawing.Point(462, 28);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(86, 37);
+=======
+            this.btnSave.Location = new System.Drawing.Point(616, 34);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(114, 45);
+>>>>>>> 1137a496643bdb4f9622cb3fb7baa8cf7e51b8e3
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Xuất file";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -82,7 +89,12 @@ namespace QLThuVien
             // 
             // nudThang
             // 
+<<<<<<< HEAD
             this.nudThang.Location = new System.Drawing.Point(213, 35);
+=======
+            this.nudThang.Location = new System.Drawing.Point(284, 43);
+            this.nudThang.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> 1137a496643bdb4f9622cb3fb7baa8cf7e51b8e3
             this.nudThang.Maximum = new decimal(new int[] {
             12,
             0,
@@ -94,7 +106,11 @@ namespace QLThuVien
             0,
             0});
             this.nudThang.Name = "nudThang";
+<<<<<<< HEAD
             this.nudThang.Size = new System.Drawing.Size(39, 26);
+=======
+            this.nudThang.Size = new System.Drawing.Size(52, 30);
+>>>>>>> 1137a496643bdb4f9622cb3fb7baa8cf7e51b8e3
             this.nudThang.TabIndex = 9;
             this.nudThang.UseWaitCursor = true;
             this.nudThang.Value = new decimal(new int[] {
@@ -132,10 +148,16 @@ namespace QLThuVien
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.label4.Location = new System.Drawing.Point(160, 37);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 19);
+=======
+            this.label4.Location = new System.Drawing.Point(214, 45);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 23);
+>>>>>>> 1137a496643bdb4f9622cb3fb7baa8cf7e51b8e3
             this.label4.TabIndex = 0;
             this.label4.Text = "Tháng";
             this.label4.UseWaitCursor = true;
@@ -219,6 +241,7 @@ namespace QLThuVien
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            this.Column2.Width = 125;
             // 
             // Column5
             // 
@@ -249,7 +272,11 @@ namespace QLThuVien
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dataTraCuu);
             this.Controls.Add(this.panel1);
+<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+>>>>>>> 1137a496643bdb4f9622cb3fb7baa8cf7e51b8e3
             this.Name = "frmBaoCao";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmBaoCao_Load);

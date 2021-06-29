@@ -105,12 +105,12 @@
             this.Column6,
             this.Column8,
             this.Column7});
-            this.dataSach.Location = new System.Drawing.Point(13, 437);
+            this.dataSach.Location = new System.Drawing.Point(3, 437);
             this.dataSach.Name = "dataSach";
             this.dataSach.ReadOnly = true;
             this.dataSach.RowHeadersWidth = 51;
             this.dataSach.RowTemplate.Height = 24;
-            this.dataSach.Size = new System.Drawing.Size(1026, 272);
+            this.dataSach.Size = new System.Drawing.Size(1036, 272);
             this.dataSach.TabIndex = 4;
             this.dataSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSach_CellContentClick);
             this.dataSach.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataSach_CellMouseClick);
@@ -434,16 +434,16 @@
             this.label10.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(458, 408);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(175, 26);
+            this.label10.Size = new System.Drawing.Size(173, 26);
             this.label10.TabIndex = 5;
-            this.label10.Text = " Danh sách sách";
+            this.label10.Text = " Danh mục sách";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // frmDanhMucSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1051, 721);
+            this.ClientSize = new System.Drawing.Size(1048, 1055);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dataSach);
             this.Controls.Add(this.panel2);
@@ -451,6 +451,7 @@
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.label9);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

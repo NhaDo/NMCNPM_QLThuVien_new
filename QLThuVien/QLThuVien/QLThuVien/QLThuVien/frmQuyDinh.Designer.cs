@@ -35,14 +35,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataQuyDinh = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnMoi = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataQuyDinh)).BeginInit();
             this.panel2.SuspendLayout();
@@ -110,6 +110,33 @@
             this.dataQuyDinh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataQuyDinh_CellContentClick);
             this.dataQuyDinh.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataTheLoai_CellMouseClick);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaThamSo";
+            this.Column1.HeaderText = "Mã Quy Định";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 200;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TenThamSo";
+            this.Column2.HeaderText = "Tên Quy Định";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 300;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "GiaTriThamSo";
+            this.Column3.HeaderText = "Giá Trị";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 200;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Silver;
@@ -174,34 +201,7 @@
             this.btnMoi.UseVisualStyleBackColor = true;
             this.btnMoi.Click += new System.EventHandler(this.btnMoi_Click);
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaThamSo";
-            this.Column1.HeaderText = "Mã Quy Định";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 200;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TenThamSo";
-            this.Column2.HeaderText = "Tên Quy Định";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 300;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "GiaTriThamSo";
-            this.Column3.HeaderText = "Giá Trị";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 200;
-            // 
-            // frmTheLoai
+            // frmQuyDinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -210,10 +210,11 @@
             this.Controls.Add(this.dataQuyDinh);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmTheLoai";
+            this.Name = "frmQuyDinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thể Loại Sách";
+            this.Text = "Quy định";
             this.Load += new System.EventHandler(this.frmTheLoai_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

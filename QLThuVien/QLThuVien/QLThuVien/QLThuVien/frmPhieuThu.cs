@@ -33,27 +33,11 @@ namespace QLThuVien
             Load_Data();
         }
 
-        private void dataPhieuThu_CellContentClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            try
-            {
-                DataGridViewRow row = new DataGridViewRow();
-                row = dataPhieuThu.Rows[e.RowIndex];
-                txtMaPhieuThu.Text = row.Cells[0].Value.ToString();
-                txtMaDocGia.Text = row.Cells[1].Value.ToString();
-                txtSoTienThu.Text = row.Cells[2].Value.ToString();
-                txtConLai.Text = row.Cells[3].Value.ToString();
-            }
-            catch (Exception)
-            { }
-        }
+        
 
-        private void dataPhieuThu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        
 
-        }
-
-        private void dataPhieuThu_CellClick(object sender, DataGridViewCellEventArgs e)
+            private void dataPhieuThu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -105,7 +89,10 @@ namespace QLThuVien
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            string capnhat = @"update PhieuThu set MaDocGia='" + txtMaDocGia.Text + "',SoTienThu='" + txtSoTienThu.Text + "',ConLai='" + txtConLai.Text + "' where MaPhieuThu='" + txtMaPhieuThu.Text + "'";
+            string capnhat = @"update PhieuThu set MaDocGia='" + txtMaDocGia.Text + "',SoTienThu='" 
+                                                               + txtSoTienThu.Text + "',ConLai='" 
+                                                               + txtConLai.Text + "' where MaPhieuThu='" 
+                                                               + txtMaPhieuThu.Text + "'";
             Conn.executeQuery(capnhat);
             Load_Data();
             MessageBox.Show("Cập nhật phiếu thu thành công!!");
@@ -124,6 +111,31 @@ namespace QLThuVien
             string str = @"select * from PhieuThu where MaDocGia LIKE '%" + txtTimKiem.Text + "%'";
             DataTable dt = Conn.getDataTable(str);
             dataPhieuThu.DataSource = dt;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataPhieuThu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = dataPhieuThu.Rows[e.RowIndex];
+                txtMaPhieuThu.Text = row.Cells[0].Value.ToString();
+                txtMaDocGia.Text = row.Cells[1].Value.ToString();
+                txtSoTienThu.Text = row.Cells[2].Value.ToString();
+                txtConLai.Text = row.Cells[3].Value.ToString();
+            }
+            catch (Exception)
+            { }
         }
     }
 }

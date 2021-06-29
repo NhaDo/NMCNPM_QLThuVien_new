@@ -122,7 +122,7 @@ namespace QLThuVien
 
         private void mượnSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form Muon = new frmMuonSach();
+            Form Muon = new frmPhieuMuonTra();
             Muon.Show();
         }
 
@@ -245,12 +245,12 @@ namespace QLThuVien
 
         private void pictureBox13_Click(object sender, EventArgs e)
         {
-            frmMuonSach Muon = new frmMuonSach();
-            Muon.Show();
-            
-            Muon.SoSachMuonMax = tham_so[4];
+            frmPhieuMuonTra MuonTra = new frmPhieuMuonTra();
+            MuonTra.SoSachMuonMax = tham_so[4];
+            MuonTra.SoNgayMuonMax = tham_so[5];
+            MuonTra.TienPhatMotNgay = tham_so[6];
+            MuonTra.Show();
         }
-
     }
 
     

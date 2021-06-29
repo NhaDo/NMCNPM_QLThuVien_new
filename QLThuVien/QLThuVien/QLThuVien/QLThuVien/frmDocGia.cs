@@ -115,8 +115,7 @@ namespace QLThuVien
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            
-    
+
             if (txtLoaiDocGia.Text != "1" && txtLoaiDocGia.Text != "2" && txtLoaiDocGia.Text != "3")
                 MessageBox.Show("Loại độc giả " + txtLoaiDocGia.Text + " không tồn tại");
             else if (IsAlphabets(txtHoTen.Text) == false)
@@ -193,6 +192,11 @@ namespace QLThuVien
         private void datelapthe_ValueChanged(object sender, EventArgs e)
         {
             this.datehethan.Value = datelapthe.Value.AddMonths(ThoiHanSuDungThe);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

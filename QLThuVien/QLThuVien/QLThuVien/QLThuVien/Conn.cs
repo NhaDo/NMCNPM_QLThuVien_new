@@ -33,10 +33,9 @@ namespace QLThuVien
             {
                 cnn.Open();
             }
-            catch
+            catch(SqlException Ex)
             {
-                MessageBox.Show("Lỗi", "Không thể kết nối đến cơ sở dữ liệu!!");
-                return;
+
             }
         }
 
@@ -52,11 +51,11 @@ namespace QLThuVien
                 cmd.ExecuteNonQuery();
                 cnn.Close();
             }
-            catch
+            catch(SqlException Ex)
             {
-                MessageBox.Show("Lỗi", "Không thể thực thi câu lệnh này!!");
-                return;
+
             }
+
 
         }
 
@@ -82,9 +81,6 @@ namespace QLThuVien
             cnn.Close();
             return ds.Tables[0];
         }
-
-
-
 
     }
 }
