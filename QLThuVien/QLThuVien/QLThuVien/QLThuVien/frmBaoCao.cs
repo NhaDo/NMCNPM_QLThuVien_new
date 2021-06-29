@@ -18,7 +18,17 @@ namespace QLThuVien
         }
         public void Load_BaoCao(int thang, int nam)
         {
-            string str = @"select CT.MaCTBC,TL.TenTheLoai, CT.SoLuotMuon, CT.TyLe, BC.TongSoLuotMuon from BCMSTTL BC join CTBCMSTTL CT on CT.MaBC = Bc.MaBC join THELOAI TL on CT.MaTheLoai = TL.MaTheLoai where (BC.Thang='" + thang + "'and Nam='" + nam + "')";
+            //string str = @"select CT.MaCTBC,TL.TenTheLoai, CT.SoLuotMuon, CT.TyLe, BC.TongSoLuotMuon 
+            //                from BCMSTTL BC join CTBCMSTTL CT on 
+            //                                CT.MaBC = Bc.MaBC join THELOAI TL on 
+            //                                    CT.MaTheLoai = TL.MaTheLoai where (BC.Thang='" + thang + "'and Nam='" + nam + "')";
+            string str = @"select THELOAI.MaTheLoai, TenTheLoai, CUONSACH.MaSach, CUONSACH.MaCuonSach, CUONSACH.TinhTrang
+                           from THELOAI, PHIEUMUONTRA, SACH, CUONSACH
+                            where SACH.MaSach = CUONSACH.MaSach
+                            and SACH.MaTheLoai=THELOAI.MaTheLoai
+                            and MONTH(PHIEUMUONTRA.NgayMuon) = '" + nudThang.Value.ToString()
+                            + "'and YEAR(PHIEUMUONTRA.NgayMuon) = '" + nudNam.Value.ToString() + "'";
+            
             DataTable dt = Conn.getDataTable(str);
             dataTraCuu.DataSource = dt;
             nudNam.Maximum = DateTime.Now.Year;

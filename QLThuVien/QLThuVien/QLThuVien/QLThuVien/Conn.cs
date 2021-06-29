@@ -55,8 +55,6 @@ namespace QLThuVien
             {
                 MessageBox.Show("Lỗi thêm dữ liệu vào csdl");
             }
-
-
         }
 
 
