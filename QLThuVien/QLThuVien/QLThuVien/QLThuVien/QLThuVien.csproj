@@ -137,12 +137,6 @@
     <Compile Include="frmPhieuThu.Designer.cs">
       <DependentUpon>frmPhieuThu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTraSach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTraSach.Designer.cs">
-      <DependentUpon>frmTraSach.cs</DependentUpon>
-    </Compile>
     <Compile Include="Library_DBDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -180,9 +174,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhieuThu.resx">
       <DependentUpon>frmPhieuThu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTraSach.resx">
-      <DependentUpon>frmTraSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhieuMuonTra.resx">
       <DependentUpon>frmPhieuMuonTra.cs</DependentUpon>

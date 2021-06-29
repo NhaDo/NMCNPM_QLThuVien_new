@@ -82,7 +82,7 @@ namespace QLThuVien
             {
                 for (int j = 0; j < dataTraCuu.Columns.Count; j++)
                 {
-                    xcelApp.Cells[i + 2, j + 1] = dataTraCuu.Rows[i].Cells[j].Value.ToString();
+                    xcelApp.Cells[i + 2, j + 1] = dataTraCuu.Rows[i].Cells[j].Value;
                 }
             }
             xcelApp.Columns.AutoFit();
