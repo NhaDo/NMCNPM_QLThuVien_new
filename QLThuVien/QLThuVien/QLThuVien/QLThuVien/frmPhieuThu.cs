@@ -88,7 +88,10 @@ namespace QLThuVien
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            string capnhat = @"update PhieuThu set MaDocGia='" + txtMaDocGia.Text + "',SoTienThu='" + txtSoTienThu.Text + "',ConLai='" + txtConLai.Text + "' where MaPhieuThu='" + txtMaPhieuThu.Text + "'";
+            string capnhat = @"update PhieuThu set MaDocGia='" + txtMaDocGia.Text + "',SoTienThu='" 
+                                                               + txtSoTienThu.Text + "',ConLai='" 
+                                                               + txtConLai.Text + "' where MaPhieuThu='" 
+                                                               + txtMaPhieuThu.Text + "'";
             Conn.executeQuery(capnhat);
             MessageBox.Show("Cập nhật thành công!!");
             Load_Data();

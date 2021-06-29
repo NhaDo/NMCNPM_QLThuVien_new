@@ -33,7 +33,6 @@ namespace QLThuVien
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtMaDocGia = new System.Windows.Forms.TextBox();
-            this.datengaytra = new System.Windows.Forms.DateTimePicker();
             this.datengaymuon = new System.Windows.Forms.DateTimePicker();
             this.txtTienPhat = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -62,6 +61,7 @@ namespace QLThuVien
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datengaytra = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPhieuMuonTra)).BeginInit();
@@ -70,8 +70,8 @@ namespace QLThuVien
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.txtMaDocGia);
             this.panel1.Controls.Add(this.datengaytra);
+            this.panel1.Controls.Add(this.txtMaDocGia);
             this.panel1.Controls.Add(this.datengaymuon);
             this.panel1.Controls.Add(this.txtTienPhat);
             this.panel1.Controls.Add(this.label8);
@@ -96,14 +96,6 @@ namespace QLThuVien
             this.txtMaDocGia.Name = "txtMaDocGia";
             this.txtMaDocGia.Size = new System.Drawing.Size(323, 30);
             this.txtMaDocGia.TabIndex = 5;
-            // 
-            // datengaytra
-            // 
-            this.datengaytra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datengaytra.Location = new System.Drawing.Point(714, 83);
-            this.datengaytra.Name = "datengaytra";
-            this.datengaytra.Size = new System.Drawing.Size(311, 30);
-            this.datengaytra.TabIndex = 4;
             // 
             // datengaymuon
             // 
@@ -336,7 +328,7 @@ namespace QLThuVien
             this.dataPhieuMuonTra.Size = new System.Drawing.Size(1086, 272);
             this.dataPhieuMuonTra.TabIndex = 10;
             this.dataPhieuMuonTra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPhieuMuonTra_CellClick);
-            this.dataPhieuMuonTra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPhieuMuonTra_CellContentClick);
+            
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -401,6 +393,15 @@ namespace QLThuVien
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 145;
             // 
+            // datengaytra
+            // 
+            this.datengaytra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datengaytra.Location = new System.Drawing.Point(714, 80);
+            this.datengaytra.Name = "datengaytra";
+            this.datengaytra.Size = new System.Drawing.Size(311, 30);
+            this.datengaytra.TabIndex = 6;
+            this.datengaytra.ValueChanged += new System.EventHandler(this.datengaytra_ValueChanged);
+            // 
             // frmPhieuMuonTra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -428,8 +429,6 @@ namespace QLThuVien
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DateTimePicker datengaytra;
-        private System.Windows.Forms.DateTimePicker datengaymuon;
         private System.Windows.Forms.TextBox txtTienPhat;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
@@ -458,5 +457,7 @@ namespace QLThuVien
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DateTimePicker datengaymuon;
+        private System.Windows.Forms.DateTimePicker datengaytra;
     }
 }

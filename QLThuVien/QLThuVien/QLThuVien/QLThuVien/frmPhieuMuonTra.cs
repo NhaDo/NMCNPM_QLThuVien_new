@@ -76,11 +76,11 @@ namespace QLThuVien
 
             if (flag == 0 && flag2<SoSachMuonMax)
             {
-                string them = @"insert into PHIEUMUONTRA(MaCuonSach,MaDocGia,NgayMuon,NgayTra,TienPhat,SoTienTra) values ('"
+                string them = @"insert into PHIEUMUONTRA(MaCuonSach,MaDocGia,NgayMuon,TienPhat,SoTienTra) values ('"
                                                                     + txtMaCuonSach.Text + "','"
                                                                     + txtMaDocGia.Text + "','"
                                                                     + datengaymuon.Text + "','"
-                                                                    + datengaytra.Text + "','"
+                                                                    
                                                                     + txtTienPhat.Text + "','"
                                                                     + txtSoTienTra.Text + "')";
                 Conn.executeQuery(them);
@@ -123,16 +123,24 @@ namespace QLThuVien
 
         private void btnCapNhat_Click_1(object sender, EventArgs e)
         {
-            string capnhat = @"update PhieuMuonTra set MaCuonSach='" + txtMaCuonSach.Text + "',MaDocGia='"
-                                                                     + txtMaDocGia.Text + "',NgayMuon='"
-                                                                     + datengaymuon.Text + "',NgayTra='"
-                                                                     + datengaytra + "',SoTienTra'='"
-                                                                     + txtSoTienTra + "',TienPhat='"
-                                                                     + txtTienPhat + "' where MaMuonTra='"
-                                                                     + txtMaMuonTra.Text + "'";
-            Conn.executeQuery(capnhat);
-            MessageBox.Show("Cập nhật thành công!!");
-            Load_Data();
+            if (txtMaMuonTra != null)
+            {
+
+                string capnhat = @"update PHIEUMUONTRA set MaCuonSach='" + txtMaCuonSach.Text + "',MaDocGia='"
+                                                                        + txtMaDocGia.Text + "',NgayMuon='"
+                                                                        + datengaymuon.Text + "',NgayTra='"
+                                                                        + datengaytra.Text + "',TienPhat='"
+                                                                        + txtTienPhat.Text + "',SoTienTra='"
+                                                                        + txtSoTienTra.Text + "' where MaMuonTra='"
+                                                                        + txtMaMuonTra.Text + "'";
+                Conn.executeQuery(capnhat);
+                MessageBox.Show("Cập nhật thành công!!");
+                Load_Data();
+            }
+            else
+            {
+                MessageBox.Show("Mã mượn trả không được để trống!!");
+            }    
         }
 
         private void btnMoi_Click_1(object sender, EventArgs e)
@@ -153,23 +161,7 @@ namespace QLThuVien
             dataPhieuMuonTra.DataSource = dt;
         }
 
-        private void dataPhieuMuonTra_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                DataGridViewRow row = new DataGridViewRow();
-                row = dataPhieuMuonTra.Rows[e.RowIndex];
-                txtMaMuonTra.Text = row.Cells[0].Value.ToString();
-                txtMaCuonSach.Text = row.Cells[1].Value.ToString();
-                txtMaDocGia.Text = row.Cells[2].Value.ToString();
-                datengaymuon.Text = row.Cells[3].Value.ToString();
-                datengaytra.Text = row.Cells[4].Value.ToString();
-                txtSoTienTra.Text = row.Cells[5].Value.ToString();
-                txtTienPhat.Text = row.Cells[6].Value.ToString();
-            }
-            catch (Exception)
-            { }
-        }
+        
 
         private void dataPhieuMuonTra_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -181,12 +173,31 @@ namespace QLThuVien
                 txtMaCuonSach.Text = row.Cells[1].Value.ToString();
                 txtMaDocGia.Text = row.Cells[2].Value.ToString();
                 datengaymuon.Text = row.Cells[3].Value.ToString();
-                datengaytra.Text = row.Cells[4].Value.ToString();
-                txtSoTienTra.Text = row.Cells[5].Value.ToString();
-                txtTienPhat.Text = row.Cells[6].Value.ToString();
+                datengaytra.Text = row.Cells[4].Value.ToString();                
+                txtTienPhat.Text = row.Cells[5].Value.ToString();
+                txtSoTienTra.Text = row.Cells[6].Value.ToString();
             }
             catch (Exception)
             { }
+        }
+
+ 
+
+        private void datengaytra_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime dates1 = Convert.ToDateTime(datengaytra.Text);
+            DateTime dates2 = Convert.ToDateTime(datengaymuon.Text);
+
+            TimeSpan time = dates1.Subtract(dates2);
+            int days = time.Days;
+            if (days > SoNgayMuonMax)
+            {
+                txtTienPhat.Text = ((days-SoNgayMuonMax)*TienPhatMotNgay).ToString();
+            }
+            else
+            {
+                txtTienPhat.Text = "0";
+            }    
         }
     }
 }
