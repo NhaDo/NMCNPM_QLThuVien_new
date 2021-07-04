@@ -103,21 +103,35 @@ namespace QLThuVien
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            string capnhat = @"update PhieuThu set MaDocGia='" + txtMaDocGia.Text + "',SoTienThu='" 
-                                                               + txtSoTienThu.Text + "',ConLai='" 
-                                                               + txtConLai.Text + "' where MaPhieuThu='" 
+            if (Convert.ToInt32(txtSoTienThu.Text) > 0)
+            {
+                string capnhat = @"update PhieuThu set MaDocGia='" + txtMaDocGia.Text + "',SoTienThu='"
+                                                               + txtSoTienThu.Text + "',ConLai='"
+                                                               + txtConLai.Text + "' where MaPhieuThu='"
                                                                + txtMaPhieuThu.Text + "'";
-            Conn.executeQuery(capnhat);
-            MessageBox.Show("Cập nhật thành công!!");
-            Load_Data();
+                Conn.executeQuery(capnhat);
+                MessageBox.Show("Cập nhật thành công!!");
+                Load_Data();
+            }
+            else
+            {
+                MessageBox.Show("Phải nhập số tiền thu lớn hơn 0");
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string them = @"insert into PhieuThu values ('" + txtMaDocGia.Text + "','" + txtSoTienThu.Text + "','" + txtConLai.Text + "')";
-            Conn.executeQuery(them);
-            MessageBox.Show("Thêm sách thành công!!");
-            Load_Data();
+            if(Convert.ToInt32(txtSoTienThu.Text)>0)
+            {
+                string them = @"insert into PhieuThu values ('" + txtMaDocGia.Text + "','" + txtSoTienThu.Text + "','" + txtConLai.Text + "')";
+                Conn.executeQuery(them);
+                MessageBox.Show("Thêm sách thành công!!");
+                Load_Data();
+            }
+            else
+            {
+                MessageBox.Show("Phải nhập số tiền thu lớn hơn 0");
+            }
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
@@ -154,18 +168,15 @@ namespace QLThuVien
 
         private void txtMaDocGia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int TongNo = 0;
+            frmDocGia DG = new frmDocGia();
+            DG.Visible = false;
+            DG.SendToBack();
+            DG.Show();
+            DG.Hide();
 
-            frmPhieuMuonTra MuonTra = new frmPhieuMuonTra();
-            MuonTra.Visible = false;
-            MuonTra.SendToBack();
-            MuonTra.Show();
-            MuonTra.Hide();
-            
-            int SoSach = MuonTra.SoQuyenSachTraTre(txtMaDocGia.Text.ToString());
+            int tongno = DG.TongNo(txtMaDocGia.Text.ToString());
 
-            TongNo += SoSach * TienPhatMotNgay;
-            txtTongNo.Text = TongNo.ToString();
+            txtTongNo.Text = tongno.ToString();
         }
         public bool IsAlphabets(string inputString)
         {

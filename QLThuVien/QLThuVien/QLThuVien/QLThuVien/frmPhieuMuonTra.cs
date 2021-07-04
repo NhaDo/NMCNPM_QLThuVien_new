@@ -170,6 +170,10 @@ namespace QLThuVien
                                         + txtSoTienTra.Text + "' where MaMuonTra='"
                                         + txtMaMuonTra.Text + "'";
                     Conn.executeQuery(capnhat);
+                    
+                    string capnhatdocgia = @"update DOCGIA set TongNo='" + Convert.ToInt32(Convert.ToInt32(txtTienPhat.Text) - Convert.ToInt32(txtSoTienTra.Text)) + "'where MaDocGia='"
+                                                                           + txtMaDocGia.Text + "'";
+                    Conn.executeQuery(capnhatdocgia);
                     MessageBox.Show("Cập nhật thành công!!");
                     Load_Data();
                 }

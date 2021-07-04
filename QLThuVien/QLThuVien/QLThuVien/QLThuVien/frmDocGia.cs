@@ -20,6 +20,24 @@ namespace QLThuVien
         public int TuoiToiThieu { get; set; }
 
         public int ThoiHanSuDungThe { get; set; }
+
+        public int TongNo(string MaDocGia)
+        {
+            int tongno = 0;
+            if (dataDocGia.Rows.Count > 1)
+            {
+                foreach (DataGridViewRow row in dataDocGia.Rows)
+                {
+                    if (row.Index <= (dataDocGia.RowCount - 2)
+                        && row.Cells[0].Value.ToString() == MaDocGia)
+                    {
+                        tongno = Convert.ToInt32(row.Cells[8].Value);
+                        return tongno;
+                    }
+                }
+            }
+            return tongno;
+        }
         public frmDocGia()
         {
             InitializeComponent();

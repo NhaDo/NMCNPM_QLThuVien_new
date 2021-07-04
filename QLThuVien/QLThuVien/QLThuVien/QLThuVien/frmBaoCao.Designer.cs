@@ -39,12 +39,12 @@ namespace QLThuVien
             this.nudNam = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.dataTraCuu = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnTong = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudThang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNam)).BeginInit();
@@ -155,10 +155,8 @@ namespace QLThuVien
             this.dataTraCuu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataTraCuu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column3,
-            this.Column4,
             this.Column2,
-            this.Column5});
+            this.Column3});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -180,54 +178,9 @@ namespace QLThuVien
             this.dataTraCuu.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataTraCuu.RowHeadersWidth = 51;
             this.dataTraCuu.RowTemplate.Height = 24;
-            this.dataTraCuu.Size = new System.Drawing.Size(779, 294);
+            this.dataTraCuu.Size = new System.Drawing.Size(779, 234);
             this.dataTraCuu.TabIndex = 7;
             this.dataTraCuu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTraCuu_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaCTBC";
-            this.Column1.HeaderText = "STT";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 70;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "TenTheLoai";
-            this.Column3.HeaderText = "Tên Thể Loại";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 200;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "SoLuotMuon";
-            this.Column4.HeaderText = "Số Lượt Mượn";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 200;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TyLe";
-            this.Column2.HeaderText = "Tỷ Lệ";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "TongSoLuotMuon";
-            this.Column5.HeaderText = "Tổng Số Lượt Mượn";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 150;
             // 
             // label10
             // 
@@ -240,11 +193,62 @@ namespace QLThuVien
             this.label10.Text = "Danh sách thống kê";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "TenTheLoai";
+            this.Column1.HeaderText = "Tên Thể Loại";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 200;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "SoLuotMuon";
+            this.Column2.HeaderText = "Số Lượt Mượn";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 200;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TyLe";
+            this.Column3.HeaderText = "Tỷ Lệ";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 125;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(433, 403);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(204, 26);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Tổng số lượt mượn";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // btnTong
+            // 
+            this.btnTong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTong.Location = new System.Drawing.Point(669, 394);
+            this.btnTong.Name = "btnTong";
+            this.btnTong.Size = new System.Drawing.Size(73, 42);
+            this.btnTong.TabIndex = 11;
+            this.btnTong.Text = "0";
+            this.btnTong.UseVisualStyleBackColor = true;
+            this.btnTong.UseWaitCursor = true;
+            // 
             // frmBaoCao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 450);
+            this.Controls.Add(this.btnTong);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dataTraCuu);
             this.Controls.Add(this.panel1);
@@ -270,11 +274,11 @@ namespace QLThuVien
         internal System.Windows.Forms.NumericUpDown nudNam;
         private System.Windows.Forms.DataGridView dataTraCuu;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnTong;
     }
 }

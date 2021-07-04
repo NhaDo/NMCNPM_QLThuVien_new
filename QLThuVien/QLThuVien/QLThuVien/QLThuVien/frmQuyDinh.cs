@@ -12,7 +12,16 @@ namespace QLThuVien
 {
     public partial class frmQuyDinh : Form
     {
+        public int TuoiToiThieu { get; set; }
 
+        public int TuoiToiDa { get; set; }
+
+        public int ThoiHanSuDung { get; set; }
+        public int SoNgayMuonMax { get; set; }
+
+        public int SoSachMuonMax { get; set; }
+
+        public int KhoangCachXB { get; set; }
 
 
         public frmQuyDinh()
@@ -50,19 +59,6 @@ namespace QLThuVien
 
         }
 
-        private void btnThem_Click_1(object sender, EventArgs e)
-        {
-            {
-                string them = @"insert into ThamSo values(N'" + txtQuyDinh.Text + "','" + txtGiaTri.Text + "')";
-                if (txtQuyDinh.Text == "")
-                    MessageBox.Show("Tên tham số không được để trống!!");
-                else
-                {
-                    Conn.executeQuery(them);
-                    Load_TL();
-                }
-            }
-        }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -89,8 +85,57 @@ namespace QLThuVien
                 MessageBox.Show("Tên tham số không được để trống!!");
             else
             {
-                Conn.executeQuery(up);
-                Load_TL();
+                if (txtQuyDinh.Text == "Tuoitoithieu")
+                    if (Convert.ToInt32(txtGiaTri.Text) < TuoiToiDa)
+                    {
+                        Conn.executeQuery(up);
+                        Load_TL();
+                    }
+                    else
+                        MessageBox.Show("Tuổi tối thiểu phải nhỏ hơn tuổi tối đa");
+                else if (txtQuyDinh.Text == "Tuoitoida")
+                    if (Convert.ToInt32(txtGiaTri.Text) > TuoiToiThieu)
+                    {
+                        Conn.executeQuery(up);
+                        Load_TL();
+                    }
+                    else
+                        MessageBox.Show("Tuổi tối đa phải lớn hơn tuổi tối thiểu");
+                else if (txtQuyDinh.Text == "KhoangcachXB")
+                    if (Convert.ToInt32(txtGiaTri.Text) > 0)
+                    {
+                        Conn.executeQuery(up);
+                        Load_TL();
+                    }
+                    else
+                        MessageBox.Show("Khoảng cách năm xuất bản phải lớn hơn 0");
+                else if (txtQuyDinh.Text == "Sosachmuonmax")
+                    if (Convert.ToInt32(txtGiaTri.Text) > 0)
+                    {
+                        Conn.executeQuery(up);
+                        Load_TL();
+                    }
+                    else
+                        MessageBox.Show("Số sách mượn max phải lớn hơn 0");
+                else if (txtQuyDinh.Text == "Songaymuonmax")
+                    if (Convert.ToInt32(txtGiaTri.Text) > 0)
+                    {
+                        Conn.executeQuery(up);
+                        Load_TL();
+                    }
+                    else
+                        MessageBox.Show("Số ngày mượn max phải lớn hơn 0");
+                else if (txtQuyDinh.Text == "Thoihansudung")
+                    if (Convert.ToInt32(txtGiaTri.Text) > 0)
+                    {
+                        Conn.executeQuery(up);
+                        Load_TL();
+                    }
+                    else
+                        MessageBox.Show("Thời hạn sử dụng phải lớn hơn 0");
+                else if (txtQuyDinh.Text == "Tienphat1ngay")
+                    MessageBox.Show("Bạn không có quyền thay đổi tham số này");
+
             }
 
 

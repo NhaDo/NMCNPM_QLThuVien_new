@@ -63,8 +63,15 @@ namespace QLThuVien
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            Form QD = new frmQuyDinh();
-            QD.Show();            
+            frmQuyDinh QD = new frmQuyDinh();
+            QD.Show();
+            QD.TuoiToiThieu = tham_so[1];
+            QD.TuoiToiDa = tham_so[2];
+            QD.ThoiHanSuDung = tham_so[3];
+            QD.KhoangCachXB = tham_so[4];
+            QD.SoNgayMuonMax = tham_so[6];
+            QD.SoSachMuonMax = tham_so[5];
+
             QD.FormClosed += new FormClosedEventHandler(QD_formclosed);
 
         }

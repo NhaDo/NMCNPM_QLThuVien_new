@@ -24,16 +24,9 @@ namespace QLThuVien
             DataTable dt = Conn.getDataTable(str);
             dataSach.DataSource = dt;
         }
-        public void Load_cbox()
-        {
-            string sqlcboxSup = "select * from sach";
-            cboxMaTL.DisplayMember = "MaTheLoai";
-            cboxMaTL.DataSource = Conn.getDataTable(sqlcboxSup);
-        }
         private void frmDanhMucSach_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.Load_cbox();
             Load_Data();
         }
 
@@ -45,7 +38,7 @@ namespace QLThuVien
                 row = dataSach.Rows[e.RowIndex];
                 txtMaSach.Text = row.Cells[0].Value.ToString();
                 txtTenSach.Text = row.Cells[1].Value.ToString();
-                cboxMaTL.Text = row.Cells[2].Value.ToString();
+                txtTL.Text = row.Cells[2].Value.ToString();
                 datenamxb.Text = row.Cells[3].Value.ToString();
                 txtNhaXB.Text = row.Cells[4].Value.ToString();
                 datengaynhap.Text = row.Cells[5].Value.ToString();
@@ -68,7 +61,7 @@ namespace QLThuVien
         private void btnMoi_Click(object sender, EventArgs e)
         {
             txtMaSach.Text = "";
-            cboxMaTL.Text = "";
+            txtTL.Text = "";
             txtTenSach.Text = "";
             datenamxb.Text = "1/1/2021";
             txtNhaXB.Text = "";
@@ -110,10 +103,10 @@ namespace QLThuVien
         {
             if (datengaynhap.Value.Subtract(datenamxb.Value).TotalDays <= KhoangCachXB * 365)
             {
-                if (IsAlphabets(txtTenSach.Text) == false)
-                    MessageBox.Show("Tên sách " + txtTenSach.Text + " chứa kí tự không hợp lệ");
-                else if (IsAlphabets(txtNhaXB.Text) == false)
-                    MessageBox.Show("Tên nhà xuất bản " + txtNhaXB.Text + " chứa kí tự không hợp lệ");
+                if (txtTenSach.Text == "")
+                    MessageBox.Show("Tên sách không được để trống");
+                else if (txtNhaXB.Text == "")
+                    MessageBox.Show("Tên nhà xuất bản không được để trống");
                 else if (txtTriGia.Text == "0")
                     MessageBox.Show("Xin vui lòng nhập giá trị hợp lệ");
                 else if (txtSoLuong.Text == "0")
@@ -121,14 +114,20 @@ namespace QLThuVien
                 else
                 {
                     string capnhat = @"update Sach set TenSach=N'" + txtTenSach.Text.ToString()
-                                + "',MaTheLoai='" + cboxMaTL.Text.ToString()
+                                + "',MaTheLoai='" + txtTL.Text.ToString()
                                 + "',NamXuatBan='" + datenamxb.Text.ToString()
                                 + "',NhaXuatBan=N'" + txtNhaXB.Text.ToString()
                                 + "',NgayNhap='" + datengaynhap.Text.ToString()
                                 + "',TriGia='" + txtTriGia.Text.ToString()
-                                + "',SoLuong='" + txtSoLuong.Text.ToString()
+                                + "',SoLuong=SoLuong+'" + txtSoLuong.Text.ToString()
                                 + "' where MaSach='" + txtMaSach.Text.ToString() + "'";
                     Conn.executeQuery(capnhat);
+                    string them2 = @"insert into CUONSACH(MaSach,TinhTrang) values ('" + txtMaSach.Text.ToString() + "',N'có sẵn')";
+                    for (int i = 0; i < Convert.ToInt32(txtSoLuong.Text.ToString()); i++)
+                    {
+                        Conn.executeQuery(them2);
+                        //MessageBox.Show("Thêm cuốn sách thànhcông!!");
+                    }
                     MessageBox.Show("Cập nhật thành công!!");
                     Load_Data();
                 }
@@ -152,7 +151,7 @@ namespace QLThuVien
                     MessageBox.Show("Xin vui lòng nhập số lượng hợp lệ");
                 else
                 {
-                    string them = @"insert into Sach values (N'" + txtTenSach.Text + "','" + cboxMaTL.Text + "','" + datenamxb.Text + "',N'" + txtNhaXB.Text + "','" + datengaynhap.Text + "','" + txtTriGia.Text + "','" + txtSoLuong.Text + "')";
+                    string them = @"insert into Sach values (N'" + txtTenSach.Text + "','" + txtTL.Text + "','" + datenamxb.Text + "',N'" + txtNhaXB.Text + "','" + datengaynhap.Text + "','" + txtTriGia.Text + "','" + txtSoLuong.Text + "')";
                     Conn.executeQuery(them);
                     Load_Data();
                     int z = dataSach.Rows.Count - 2;
@@ -190,6 +189,11 @@ namespace QLThuVien
         }
 
         private void dataSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cboxMaTL_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

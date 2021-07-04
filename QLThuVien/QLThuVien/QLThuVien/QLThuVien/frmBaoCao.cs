@@ -42,8 +42,8 @@ namespace QLThuVien
                 {
                     if (row.Index <= (dataTraCuu.RowCount - 2))
                     {
-                        string n = row.Cells[4].Value.ToString();
-                        SUM_TongSoLuotMuon += Convert.ToInt32(row.Cells[4].Value.ToString());
+                        string n = row.Cells[2].Value.ToString();
+                        SUM_TongSoLuotMuon += Convert.ToInt32(row.Cells[2].Value.ToString());
                     }
                 }
 
@@ -51,9 +51,9 @@ namespace QLThuVien
                 {
                     if (row.Index <= (dataTraCuu.RowCount - 2))
                     {
-                        int LuotMuon = Convert.ToInt32(row.Cells[4].Value.ToString());
-                        row.Cells[1].Value = Convert.ToString(LuotMuon * 100 / SUM_TongSoLuotMuon) + "%";
-                        row.Cells[2].Value = Convert.ToString(SUM_TongSoLuotMuon);
+                        int LuotMuon = Convert.ToInt32(row.Cells[2].Value.ToString());
+                        row.Cells[0].Value = Convert.ToString(LuotMuon * 100 / SUM_TongSoLuotMuon) + "%";
+                        btnTong.Text = Convert.ToString(SUM_TongSoLuotMuon);
                     }
                 }
 

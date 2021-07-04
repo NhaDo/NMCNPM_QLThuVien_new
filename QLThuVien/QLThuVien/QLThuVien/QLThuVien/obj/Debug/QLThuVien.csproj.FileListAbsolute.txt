@@ -174,7 +174,6 @@ D:\cnpm\doan_beta\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\o
 D:\cnpm\doan_beta\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmQuyDinh.resources
 D:\cnpm\doan_beta\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmThongKe.resources
 D:\cnpm\doan_beta\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmPhieuThu.resources
-D:\cnpm\doan_beta\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmTraSach.resources
 D:\cnpm\doan_beta\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.frmPhieuMuonTra.resources
 D:\cnpm\doan_beta\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.Properties.Resources.resources
 D:\cnpm\doan_beta\NMCNPM_QLThuVien_new\QLThuVien\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.csproj.GenerateResource.cache
