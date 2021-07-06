@@ -44,7 +44,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.txtLoaiDocGia = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtTongNo = new System.Windows.Forms.TextBox();
@@ -68,7 +67,6 @@
             this.btnMoi = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataDocGia)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageList1
@@ -98,12 +96,12 @@
             this.Column6,
             this.Column8,
             this.Column9});
-            this.dataDocGia.Location = new System.Drawing.Point(12, 387);
+            this.dataDocGia.Location = new System.Drawing.Point(12, 361);
             this.dataDocGia.Name = "dataDocGia";
             this.dataDocGia.ReadOnly = true;
             this.dataDocGia.RowHeadersWidth = 51;
             this.dataDocGia.RowTemplate.Height = 24;
-            this.dataDocGia.Size = new System.Drawing.Size(899, 188);
+            this.dataDocGia.Size = new System.Drawing.Size(899, 214);
             this.dataDocGia.TabIndex = 4;
             this.dataDocGia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataDocGia_CellContentClick);
             this.dataDocGia.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataDocGia_CellMouseClick);
@@ -185,7 +183,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(396, 318);
+            this.label10.Location = new System.Drawing.Point(389, 278);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(195, 25);
             this.label10.TabIndex = 5;
@@ -195,7 +193,7 @@
             // textBox1
             // 
             this.textBox1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.textBox1.Location = new System.Drawing.Point(255, 349);
+            this.textBox1.Location = new System.Drawing.Point(255, 318);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(442, 26);
             this.textBox1.TabIndex = 11;
@@ -208,51 +206,17 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
-            this.label3.Location = new System.Drawing.Point(196, 353);
+            this.label3.Location = new System.Drawing.Point(196, 322);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 19);
             this.label3.TabIndex = 12;
             this.label3.Text = "           ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.BackgroundImage = global::QLThuVien.Properties.Resources.mau_background_don_gian;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.txtLoaiDocGia);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.txtTongNo);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.datehethan);
-            this.panel1.Controls.Add(this.datelapthe);
-            this.panel1.Controls.Add(this.dateNgaySinh);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.txtEmail);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.txtDiaChi);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txtHoTen);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtMaDG);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(899, 237);
-            this.panel1.TabIndex = 3;
-            this.panel1.UseWaitCursor = true;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
             // txtLoaiDocGia
             // 
             this.txtLoaiDocGia.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.txtLoaiDocGia.Location = new System.Drawing.Point(611, 148);
+            this.txtLoaiDocGia.Location = new System.Drawing.Point(623, 126);
             this.txtLoaiDocGia.Name = "txtLoaiDocGia";
             this.txtLoaiDocGia.Size = new System.Drawing.Size(260, 26);
             this.txtLoaiDocGia.TabIndex = 10;
@@ -262,8 +226,8 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(488, 148);
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(511, 132);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(101, 20);
             this.label11.TabIndex = 9;
@@ -273,7 +237,7 @@
             // txtTongNo
             // 
             this.txtTongNo.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.txtTongNo.Location = new System.Drawing.Point(361, 189);
+            this.txtTongNo.Location = new System.Drawing.Point(368, 170);
             this.txtTongNo.Name = "txtTongNo";
             this.txtTongNo.Size = new System.Drawing.Size(284, 26);
             this.txtTongNo.TabIndex = 8;
@@ -285,8 +249,8 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(16, 148);
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(12, 124);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(109, 20);
             this.label9.TabIndex = 7;
@@ -298,8 +262,8 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(16, 112);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(16, 94);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(107, 20);
             this.label8.TabIndex = 6;
@@ -310,7 +274,7 @@
             // 
             this.datehethan.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.datehethan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datehethan.Location = new System.Drawing.Point(129, 148);
+            this.datehethan.Location = new System.Drawing.Point(127, 124);
             this.datehethan.Name = "datehethan";
             this.datehethan.Size = new System.Drawing.Size(274, 26);
             this.datehethan.TabIndex = 5;
@@ -321,7 +285,7 @@
             // 
             this.datelapthe.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.datelapthe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datelapthe.Location = new System.Drawing.Point(129, 107);
+            this.datelapthe.Location = new System.Drawing.Point(127, 92);
             this.datelapthe.Name = "datelapthe";
             this.datelapthe.Size = new System.Drawing.Size(274, 26);
             this.datelapthe.TabIndex = 4;
@@ -332,7 +296,7 @@
             // 
             this.dateNgaySinh.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.dateNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateNgaySinh.Location = new System.Drawing.Point(611, 23);
+            this.dateNgaySinh.Location = new System.Drawing.Point(623, 26);
             this.dateNgaySinh.Name = "dateNgaySinh";
             this.dateNgaySinh.Size = new System.Drawing.Size(260, 26);
             this.dateNgaySinh.TabIndex = 3;
@@ -342,8 +306,8 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(288, 189);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(295, 176);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 20);
             this.label7.TabIndex = 0;
@@ -353,7 +317,7 @@
             // txtEmail
             // 
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.txtEmail.Location = new System.Drawing.Point(611, 109);
+            this.txtEmail.Location = new System.Drawing.Point(623, 94);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(260, 26);
             this.txtEmail.TabIndex = 1;
@@ -363,8 +327,8 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(536, 109);
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(564, 100);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 20);
             this.label6.TabIndex = 0;
@@ -374,7 +338,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.txtDiaChi.Location = new System.Drawing.Point(611, 66);
+            this.txtDiaChi.Location = new System.Drawing.Point(623, 60);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(260, 26);
             this.txtDiaChi.TabIndex = 1;
@@ -384,8 +348,8 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(524, 72);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(552, 63);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 20);
             this.label5.TabIndex = 0;
@@ -395,7 +359,7 @@
             // txtHoTen
             // 
             this.txtHoTen.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.txtHoTen.Location = new System.Drawing.Point(129, 66);
+            this.txtHoTen.Location = new System.Drawing.Point(127, 60);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(274, 26);
             this.txtHoTen.TabIndex = 1;
@@ -406,8 +370,8 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(62, 69);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(60, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 20);
             this.label2.TabIndex = 0;
@@ -418,8 +382,8 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(503, 31);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(531, 31);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 20);
             this.label4.TabIndex = 0;
@@ -430,7 +394,7 @@
             // 
             this.txtMaDG.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.txtMaDG.Enabled = false;
-            this.txtMaDG.Location = new System.Drawing.Point(129, 25);
+            this.txtMaDG.Location = new System.Drawing.Point(127, 28);
             this.txtMaDG.Name = "txtMaDG";
             this.txtMaDG.Size = new System.Drawing.Size(274, 26);
             this.txtMaDG.TabIndex = 1;
@@ -442,8 +406,8 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(30, 31);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(28, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 20);
             this.label1.TabIndex = 0;
@@ -457,7 +421,7 @@
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(46, 255);
+            this.btnThem.Location = new System.Drawing.Point(47, 209);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(164, 54);
             this.btnThem.TabIndex = 0;
@@ -473,7 +437,7 @@
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(280, 255);
+            this.btnXoa.Location = new System.Drawing.Point(283, 209);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(164, 54);
             this.btnXoa.TabIndex = 0;
@@ -489,7 +453,7 @@
             this.btnMoi.ForeColor = System.Drawing.Color.White;
             this.btnMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnMoi.Image")));
             this.btnMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMoi.Location = new System.Drawing.Point(719, 255);
+            this.btnMoi.Location = new System.Drawing.Point(719, 209);
             this.btnMoi.Name = "btnMoi";
             this.btnMoi.Size = new System.Drawing.Size(164, 54);
             this.btnMoi.TabIndex = 0;
@@ -505,7 +469,7 @@
             this.btnCapNhat.ForeColor = System.Drawing.Color.White;
             this.btnCapNhat.Image = ((System.Drawing.Image)(resources.GetObject("btnCapNhat.Image")));
             this.btnCapNhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCapNhat.Location = new System.Drawing.Point(504, 255);
+            this.btnCapNhat.Location = new System.Drawing.Point(515, 209);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(164, 54);
             this.btnCapNhat.TabIndex = 0;
@@ -520,15 +484,32 @@
             this.BackgroundImage = global::QLThuVien.Properties.Resources.nền1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(923, 587);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtLoaiDocGia);
+            this.Controls.Add(this.dateNgaySinh);
             this.Controls.Add(this.btnMoi);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtTongNo);
             this.Controls.Add(this.btnCapNhat);
+            this.Controls.Add(this.datelapthe);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.datehethan);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtHoTen);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtMaDG);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dataDocGia);
-            this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -538,8 +519,6 @@
             this.Text = "Độc Giả";
             this.Load += new System.EventHandler(this.frmDocGia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataDocGia)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -558,7 +537,6 @@
         private System.Windows.Forms.DataGridView dataDocGia;
         private System.Windows.Forms.TextBox txtMaDG;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

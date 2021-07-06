@@ -33,7 +33,6 @@ namespace QLThuVien
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCao));
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.nudThang = new System.Windows.Forms.NumericUpDown();
@@ -46,42 +45,18 @@ namespace QLThuVien
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnTong = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudThang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTraCuu)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.BackgroundImage = global::QLThuVien.Properties.Resources.mau_background_don_gian;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.nudThang);
-            this.panel1.Controls.Add(this.nudNam);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.panel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(9, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(903, 117);
-            this.panel1.TabIndex = 6;
-            this.panel1.UseWaitCursor = true;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(314, 55);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(322, 50);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 20);
@@ -94,7 +69,7 @@ namespace QLThuVien
             this.btnSave.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(612, 41);
+            this.btnSave.Location = new System.Drawing.Point(614, 39);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(101, 43);
@@ -106,7 +81,8 @@ namespace QLThuVien
             // 
             // nudThang
             // 
-            this.nudThang.Location = new System.Drawing.Point(208, 51);
+            this.nudThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudThang.Location = new System.Drawing.Point(217, 50);
             this.nudThang.Maximum = new decimal(new int[] {
             12,
             0,
@@ -130,7 +106,8 @@ namespace QLThuVien
             // 
             // nudNam
             // 
-            this.nudNam.Location = new System.Drawing.Point(360, 51);
+            this.nudNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudNam.Location = new System.Drawing.Point(369, 50);
             this.nudNam.Maximum = new decimal(new int[] {
             1980,
             0,
@@ -157,8 +134,8 @@ namespace QLThuVien
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(152, 56);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(158, 50);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 20);
@@ -195,7 +172,7 @@ namespace QLThuVien
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataTraCuu.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataTraCuu.Location = new System.Drawing.Point(9, 188);
+            this.dataTraCuu.Location = new System.Drawing.Point(11, 134);
             this.dataTraCuu.Margin = new System.Windows.Forms.Padding(2);
             this.dataTraCuu.Name = "dataTraCuu";
             this.dataTraCuu.ReadOnly = true;
@@ -209,7 +186,7 @@ namespace QLThuVien
             this.dataTraCuu.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataTraCuu.RowHeadersWidth = 51;
             this.dataTraCuu.RowTemplate.Height = 24;
-            this.dataTraCuu.Size = new System.Drawing.Size(903, 280);
+            this.dataTraCuu.Size = new System.Drawing.Size(903, 311);
             this.dataTraCuu.TabIndex = 7;
             this.dataTraCuu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTraCuu_CellContentClick);
             // 
@@ -242,7 +219,7 @@ namespace QLThuVien
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(364, 149);
+            this.label10.Location = new System.Drawing.Point(364, 98);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(210, 25);
@@ -255,7 +232,7 @@ namespace QLThuVien
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(518, 510);
+            this.label1.Location = new System.Drawing.Point(518, 486);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(186, 24);
@@ -268,7 +245,7 @@ namespace QLThuVien
             this.btnTong.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btnTong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTong.ForeColor = System.Drawing.Color.White;
-            this.btnTong.Location = new System.Drawing.Point(715, 503);
+            this.btnTong.Location = new System.Drawing.Point(708, 478);
             this.btnTong.Margin = new System.Windows.Forms.Padding(2);
             this.btnTong.Name = "btnTong";
             this.btnTong.Size = new System.Drawing.Size(81, 43);
@@ -284,19 +261,21 @@ namespace QLThuVien
             this.BackgroundImage = global::QLThuVien.Properties.Resources.nền1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(923, 587);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnTong);
+            this.Controls.Add(this.nudNam);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.nudThang);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dataTraCuu);
-            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmBaoCao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thống kê mượn sách theo thể loại";
             this.Load += new System.EventHandler(this.frmBaoCao_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudThang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTraCuu)).EndInit();
@@ -306,8 +285,6 @@ namespace QLThuVien
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         internal System.Windows.Forms.NumericUpDown nudThang;
         internal System.Windows.Forms.NumericUpDown nudNam;

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongKe));
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.dateNgayTra = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,36 +39,15 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataTraCuu)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.BackgroundImage = global::QLThuVien.Properties.Resources.mau_background_don_gian;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.dateNgayTra);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.panel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(899, 132);
-            this.panel1.TabIndex = 5;
-            this.panel1.UseWaitCursor = true;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(631, 52);
+            this.btnSave.Location = new System.Drawing.Point(608, 48);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(106, 41);
             this.btnSave.TabIndex = 4;
@@ -82,9 +60,9 @@
             // 
             this.dateNgayTra.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.dateNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateNgayTra.Location = new System.Drawing.Point(296, 57);
+            this.dateNgayTra.Location = new System.Drawing.Point(269, 53);
             this.dateNgayTra.Name = "dateNgayTra";
-            this.dateNgayTra.Size = new System.Drawing.Size(295, 26);
+            this.dateNgayTra.Size = new System.Drawing.Size(319, 26);
             this.dateNgayTra.TabIndex = 3;
             this.dateNgayTra.UseWaitCursor = true;
             this.dateNgayTra.ValueChanged += new System.EventHandler(this.dateNgayTra_ValueChanged);
@@ -94,8 +72,8 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(162, 63);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(140, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 20);
             this.label4.TabIndex = 0;
@@ -117,12 +95,12 @@
             this.Column6,
             this.Column5,
             this.Column4});
-            this.dataTraCuu.Location = new System.Drawing.Point(12, 156);
+            this.dataTraCuu.Location = new System.Drawing.Point(12, 118);
             this.dataTraCuu.Name = "dataTraCuu";
             this.dataTraCuu.ReadOnly = true;
             this.dataTraCuu.RowHeadersWidth = 51;
             this.dataTraCuu.RowTemplate.Height = 24;
-            this.dataTraCuu.Size = new System.Drawing.Size(899, 419);
+            this.dataTraCuu.Size = new System.Drawing.Size(899, 448);
             this.dataTraCuu.TabIndex = 6;
             this.dataTraCuu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTheLoai_CellContentClick);
             // 
@@ -182,8 +160,10 @@
             this.BackgroundImage = global::QLThuVien.Properties.Resources.nền1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(923, 587);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dataTraCuu);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dateNgayTra);
+            this.Controls.Add(this.label4);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -191,16 +171,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thống kê sách trả trễ";
             this.Load += new System.EventHandler(this.frmThongKe_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataTraCuu)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker dateNgayTra;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataTraCuu;
