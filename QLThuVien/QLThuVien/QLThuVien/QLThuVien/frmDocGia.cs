@@ -41,7 +41,7 @@ namespace QLThuVien
         public frmDocGia()
         {
             InitializeComponent();
-
+            this.txtTongNo.Enabled = false;
             this.datehethan.Enabled = false;
             this.datehethan.Value = datelapthe.Value.AddMonths(ThoiHanSuDungThe);
         }
@@ -209,6 +209,29 @@ namespace QLThuVien
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string str = @"select * from DOCGIA where MaDocGia LIKE '%" + textBox1.Text+ "%' or TenDocGia LIKE N'%" + textBox1.Text + "%'";
+            DataTable dt = Conn.getDataTable(str);
+            dataDocGia.DataSource = dt;
+            
+        }
+
+        private void txtMaDG_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTongNo_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -127,7 +127,10 @@ namespace QLThuVien
             BC.Show();
         }
 
+        private void label10_Click(object sender, EventArgs e)
+        {
 
+        }
 
         private void pictureBox13_Click(object sender, EventArgs e)
         {

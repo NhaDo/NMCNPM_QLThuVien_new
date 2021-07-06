@@ -46,28 +46,35 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.BackgroundImage = global::QLThuVien.Properties.Resources.mau_background_don_gian;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.dateNgayTra);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(852, 94);
+            this.panel1.Size = new System.Drawing.Size(899, 132);
             this.panel1.TabIndex = 5;
             this.panel1.UseWaitCursor = true;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(484, 22);
+            this.btnSave.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(631, 52);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(106, 41);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Xuất file";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.UseWaitCursor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -75,9 +82,9 @@
             // 
             this.dateNgayTra.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.dateNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateNgayTra.Location = new System.Drawing.Point(169, 25);
+            this.dateNgayTra.Location = new System.Drawing.Point(296, 57);
             this.dateNgayTra.Name = "dateNgayTra";
-            this.dateNgayTra.Size = new System.Drawing.Size(295, 30);
+            this.dateNgayTra.Size = new System.Drawing.Size(295, 26);
             this.dateNgayTra.TabIndex = 3;
             this.dateNgayTra.UseWaitCursor = true;
             this.dateNgayTra.ValueChanged += new System.EventHandler(this.dateNgayTra_ValueChanged);
@@ -85,16 +92,22 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(29, 31);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(162, 63);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 23);
+            this.label4.Size = new System.Drawing.Size(112, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Ngày muốn tra";
             this.label4.UseWaitCursor = true;
             // 
             // dataTraCuu
             // 
+            this.dataTraCuu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataTraCuu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataTraCuu.BackgroundColor = System.Drawing.Color.White;
             this.dataTraCuu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataTraCuu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -104,12 +117,12 @@
             this.Column6,
             this.Column5,
             this.Column4});
-            this.dataTraCuu.Location = new System.Drawing.Point(3, 94);
+            this.dataTraCuu.Location = new System.Drawing.Point(12, 156);
             this.dataTraCuu.Name = "dataTraCuu";
             this.dataTraCuu.ReadOnly = true;
             this.dataTraCuu.RowHeadersWidth = 51;
             this.dataTraCuu.RowTemplate.Height = 24;
-            this.dataTraCuu.Size = new System.Drawing.Size(852, 415);
+            this.dataTraCuu.Size = new System.Drawing.Size(899, 419);
             this.dataTraCuu.TabIndex = 6;
             this.dataTraCuu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTheLoai_CellContentClick);
             // 
@@ -120,7 +133,6 @@
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 50;
             // 
             // Column1
             // 
@@ -129,7 +141,6 @@
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 125;
             // 
             // Column3
             // 
@@ -138,7 +149,6 @@
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 200;
             // 
             // Column6
             // 
@@ -147,7 +157,6 @@
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            this.Column6.Width = 125;
             // 
             // Column5
             // 
@@ -156,7 +165,6 @@
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 125;
             // 
             // Column4
             // 
@@ -165,24 +173,23 @@
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 200;
             // 
             // frmThongKe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(857, 522);
+            this.BackgroundImage = global::QLThuVien.Properties.Resources.nền1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(923, 587);
             this.Controls.Add(this.dataTraCuu);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frmThongKe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thống Kê";
+            this.Text = "Thống kê sách trả trễ";
             this.Load += new System.EventHandler(this.frmThongKe_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

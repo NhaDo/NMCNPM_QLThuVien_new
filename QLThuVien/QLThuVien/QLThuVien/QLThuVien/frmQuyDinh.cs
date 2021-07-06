@@ -27,6 +27,7 @@ namespace QLThuVien
         public frmQuyDinh()
         {
             InitializeComponent();
+            this.txtQuyDinh.Enabled = false;
         }
         public void Load_TL()
         {

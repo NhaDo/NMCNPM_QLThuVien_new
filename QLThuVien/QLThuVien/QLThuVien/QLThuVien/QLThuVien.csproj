@@ -236,6 +236,21 @@
       <DependentUpon>Library_DB.mdf</DependentUpon>
     </Content>
     <None Include="Resources\SACH.jpg" />
+    <None Include="Resources\icondocgia-removebg-preview.png" />
+    <None Include="Resources\sach1-removebg-preview.png" />
+    <None Include="Resources\iconquydinh1-removebg-preview.png" />
+    <None Include="Resources\iconbaocao3-removebg-preview.png" />
+    <None Include="Resources\iconmuonsach5...png" />
+    <None Include="Resources\iconthutien1-removebg-preview.png" />
+    <None Include="Resources\iconthongke3...png" />
+    <None Include="Resources\iconthongke3.png" />
+    <None Include="Resources\iconthongke3..-removebg-preview.png" />
+    <None Include="Resources\nền1.jpg" />
+    <None Include="Resources\nền xanh đỏ.jpg" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\mau-background-don-gian.jpg" />
+    <None Include="Resources\login.jpg" />
+    <None Include="Resources\ưc.jpg" />
     <Content Include="ThamSo.h" />
     <None Include="Resources\Ausleihe-formatkey-jpg-w320m.jpg" />
     <None Include="Resources\Anh-dep-sach-tacgiavn.jpg" />
